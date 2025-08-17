@@ -1,0 +1,6867 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<title> 表格排序 </title>
+		<meta charset="utf-8">
+		<meta name="Generator" content="EditPlus">
+		<meta name="Author" content="tschengbin">
+		<meta name="Keywords" content="jquery tableSort">
+		<meta name="Description" content="">
+		<script src="../jquery-latest.js"></script>
+		<style type="text/css">
+			p {
+				width: 1024px;
+				margin: 0 auto;
+				/*p相对屏幕左右居中*/
+			}
+			
+			table {
+				border: solid 1px #666;
+				border-collapse: collapse;
+				width: 100%;
+				cursor: default;
+			}
+			
+			tr {
+				border: solid 1px #666;
+				height: 30px;
+			}
+			
+			table thead tr {
+				background-color: #ccc;
+			}
+			
+			td {
+				border: solid 1px #666;
+			}
+			
+			th {
+				border: solid 1px #666;
+				text-align: center;
+				cursor: pointer;
+			}
+			
+			.sequence {
+				text-align: center;
+			}
+			
+			.hover {
+				background-color: #3399FF;
+			}
+		</style>
+	</head>
+
+	<body>
+		<p>
+			<table id="tableSort">
+				<thead>
+					<tr>
+						<th type="number">序号</th>
+						<th type="string">物品名</th>
+						<th type="string">介绍</th>
+						<th type="string">装备数值</th>
+						<th type="number">买价格</th>
+						<th type="number">卖价格</th>
+						<th type="string">物品出处-地图</th>
+						<th type="string">物品出处-怪物</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="sequence">
+							<a name="001">
+								<a href="物品图片/001.pngx">001</a>
+							</a>
+						</td>
+						<td>APPLEGEL</td>
+						<td>果冻状药品。苹果口味回复约最大HP的30% </td>
+						<td> </td>
+						<td>60</td>
+						<td>30</td>
+						<td>
+							<a href="../主页.HTML#002_1">002_1</a>
+							<a href="../主页.HTML#004_1">004_1</a>
+							<a href="../主页.HTML#006_1">006_1</a><br />
+							<a href="../主页.HTML#007_1">007_1</a>
+							<a href="../主页.HTML#010_1">010_1</a>
+							<a href="../主页.HTML#012_2">012_2</a><br />
+							<a href="../主页.HTML#016_1">016_1</a>
+							<a href="../主页.HTML#017_1">017_1</a>
+							<a href="../主页.HTML#019_1">019_1</a><br />
+							<a href="../主页.HTML#021_1">021_1</a>
+							<a href="../主页.HTML#021_2">021_2</a>
+							<a href="../主页.HTML#024_1">024_1</a><br />
+							<a href="../主页.HTML#030_1">030_1</a>
+							<a href="../主页.HTML#030_2">030_2</a>
+							<a href="../主页.HTML#037_2">037_2</a><br />
+							<a href="../主页.HTML#044_1">044_1</a>
+							<a href="../主页.HTML#045_2">045_2</a>
+							<a href="../主页.HTML#049_2">049_2</a><br />
+							<a href="../主页.HTML#051_1">051_1</a>
+							<a href="../主页.HTML#054_1">054_1</a>
+							<a href="../主页.HTML#054_2">054_2</a><br />
+							<a href="../主页.HTML#055_1">055_1</a>
+							<a href="../主页.HTML#055_2">055_2</a>
+							<a href="../主页.HTML#058_2">058_2</a><br />
+							<a href="../主页.HTML#060_1">060_1</a>
+							<a href="../主页.HTML#060_2">060_2</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#109">109</a>
+							<a href="../主页.HTML#130">130</a>
+							<a href="../主页.HTML#100">100</a><br />
+							<a href="../主页.HTML#098">098</a>
+							<a href="../主页.HTML#092">092</a>
+							<a href="../主页.HTML#036">036</a><br />
+							<a href="../主页.HTML#020">020</a>
+							<a href="../主页.HTML#006">006</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="002">
+								<a href="物品图片/002.pngx">002</a>
+							</a>
+						</td>
+						<td>ORANGE</td>
+						<td>果冻状药品。橘子口味回复约最大TP的30% </td>
+						<td> </td>
+						<td>200</td>
+						<td>100</td>
+						<td>
+							<a href="../主页.HTML#003_1">003_1</a>
+							<a href="../主页.HTML#004_1">004_1</a>
+							<a href="../主页.HTML#006_1">006_1</a><br />
+							<a href="../主页.HTML#007_1">007_1</a>
+							<a href="../主页.HTML#015_1">015_1</a>
+							<a href="../主页.HTML#016_1">016_1</a><br />
+							<a href="../主页.HTML#017_1">017_1</a>
+							<a href="../主页.HTML#021_2">021_2</a>
+							<a href="../主页.HTML#024_2">024_2</a><br />
+							<a href="../主页.HTML#025_1">025_1</a>
+							<a href="../主页.HTML#030_2">030_2</a>
+							<a href="../主页.HTML#036_1">036_1</a><br />
+							<a href="../主页.HTML#053_1">053_1</a>
+							<a href="../主页.HTML#053_2">053_2</a>
+							<a href="../主页.HTML#054_1">054_1</a><br />
+							<a href="../主页.HTML#054_2">054_2</a>
+							<a href="../主页.HTML#055_1">055_1</a>
+							<a href="../主页.HTML#055_2">055_2</a><br />
+							<a href="../主页.HTML#056_1">056_1</a>
+							<a href="../主页.HTML#056_2">056_2</a>
+							<a href="../主页.HTML#057_2">057_2</a><br />
+							<a href="../主页.HTML#060_1">060_1</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#067">067</a>
+							<a href="../主页.HTML#062">062</a>
+							<a href="../主页.HTML#153">153</a><br />
+							<a href="../主页.HTML#152">152</a>
+							<a href="../主页.HTML#141">141</a>
+							<a href="../主页.HTML#140">140</a><br />
+							<a href="../主页.HTML#123">123</a>
+							<a href="../主页.HTML#108">108</a>
+							<a href="../主页.HTML#107">107</a><br />
+							<a href="../主页.HTML#077">077</a>
+							<a href="../主页.HTML#070">070</a>
+							<a href="../主页.HTML#025">025</a><br /></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="003">
+								<a href="物品图片/003.pngx">003</a>
+							</a>
+						</td>
+						<td>MELANGE</td>
+						<td>果冻状药品。混合风味回复约最大HP和TP的30% </td>
+						<td> </td>
+						<td>1000</td>
+						<td>500</td>
+						<td>
+							<a href="../主页.HTML#006_1">006_1</a>
+							<a href="../主页.HTML#007_1">007_1</a>
+							<a href="../主页.HTML#010_2">010_2</a><br />
+							<a href="../主页.HTML#012_1">012_1</a>
+							<a href="../主页.HTML#016_1">016_1</a>
+							<a href="../主页.HTML#020_1">020_1</a><br />
+							<a href="../主页.HTML#022_1">022_1</a>
+							<a href="../主页.HTML#039_2">039_2</a>
+							<a href="../主页.HTML#045_2">045_2</a><br />
+							<a href="../主页.HTML#055_1">055_1</a>
+							<a href="../主页.HTML#058_2">058_2</a>
+							<a href="../主页.HTML#060_1">060_1</a><br />
+							<a href="../主页.HTML#060_2">060_2</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#210">210</a>
+							<a href="../主页.HTML#207">207</a>
+							<a href="../主页.HTML#173">173</a><br />
+							<a href="../主页.HTML#154">154</a>
+							<a href="../主页.HTML#128">128</a>
+							<a href="../主页.HTML#085">085</a><br />
+							<a href="../主页.HTML#082">082</a>
+							<a href="../主页.HTML#063">063</a>
+							<a href="../主页.HTML#055">055</a><br /></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="004">
+								<a href="物品图片/004.pngx">004</a>
+							</a>
+						</td>
+						<td>LEMONGEL</td>
+						<td>果冻状药品。柠檬口味回复约最大HP的60% </td>
+						<td> </td>
+						<td>500</td>
+						<td>250</td>
+						<td>
+							<a href="../主页.HTML#018_1">018_1</a>
+							<a href="../主页.HTML#018_2">018_2</a>
+							<a href="../主页.HTML#053_2">053_2</a><br />
+							<a href="../主页.HTML#054_2">054_2</a>
+							<a href="../主页.HTML#055_2">055_2</a>
+							<a href="../主页.HTML#056_2">056_2</a><br />
+							<a href="../主页.HTML#059_2">059_2</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#189">189</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="005">
+								<a href="物品图片/005.pngx">005</a>
+							</a>
+						</td>
+						<td>PINEGEL</td>
+						<td>果冻状药品。凤梨口味回复约最大TP的60% </td>
+						<td> </td>
+						<td>1000</td>
+						<td>500</td>
+						<td>
+							<a href="../主页.HTML#053_1">053_1</a>
+							<a href="../主页.HTML#054_2">054_2</a>
+							<a href="../主页.HTML#055_1">055_1</a><br />
+							<a href="../主页.HTML#059_1">059_1</a>
+							<a href="../主页.HTML#059_2">059_2</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#149">149</a>
+							<a href="../主页.HTML#087">087</a>
+							<a href="../主页.HTML#084">084</a><br />
+							<a href="../主页.HTML#065">065</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="006">
+								<a href="物品图片/006.pngx">006</a>
+							</a>
+						</td>
+						<td>MIRACLE</td>
+						<td>果冻状药品。奇特的味道回复约最大HP和TP的60% </td>
+						<td> </td>
+						<td>2000</td>
+						<td>1000</td>
+						<td>
+							<a href="../主页.HTML#055_1">055_1</a>
+							<a href="../主页.HTML#059_2">059_2</a>
+							<a href="../主页.HTML#060_2">060_2</a><br /></td>
+						<td>
+							<a href="../主页.HTML#072">072</a>
+							<a href="../主页.HTML#069">069</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="007">
+								<a href="物品图片/007.pngx">007</a>
+							</a>
+						</td>
+						<td>ELIXIR</td>
+						<td>HP·TP完全回复的圣药 </td>
+						<td> </td>
+						<td>10000</td>
+						<td>5000</td>
+						<td>
+							<a href="../主页.HTML#007_2">007_2</a>
+							<a href="../主页.HTML#012_2">012_2</a>
+							<a href="../主页.HTML#019_2">019_2</a><br />
+							<a href="../主页.HTML#022_2">022_2</a>
+							<a href="../主页.HTML#030_1">030_1</a>
+							<a href="../主页.HTML#044_1">044_1</a><br />
+							<a href="../主页.HTML#046_2">046_2</a>
+							<a href="../主页.HTML#053_1">053_1</a>
+							<a href="../主页.HTML#054_1">054_1</a><br />
+							<a href="../主页.HTML#060_1">060_1</a>
+							<a href="../主页.HTML#060_2">060_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="008">
+								<a href="物品图片/008.pngx">008</a>
+							</a>
+						</td>
+						<td>BASILISK</td>
+						<td>奇异怪兽的鳞片麻·战斗不能·HP完全回复 </td>
+						<td> </td>
+						<td>320</td>
+						<td>160</td>
+						<td>
+							<a href="../主页.HTML#024_1">024_1</a>
+							<a href="../主页.HTML#025_1">025_1</a>
+							<a href="../主页.HTML#039_1">039_1</a><br /></td>
+						<td>
+							<a href="../主页.HTML#133">133</a>
+							<a href="../主页.HTML#132">132</a>
+							<a href="../主页.HTML#064">064</a><br /></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="009">
+								<a href="物品图片/009.pngx">009</a>
+							</a>
+						</td>
+						<td>SAGE</td>
+						<td>药草的一种。使用后HP最大值上升5% </td>
+						<td> </td>
+						<td>600</td>
+						<td>300</td>
+						<td>
+							<a href="../主页.HTML#007_1">007_1</a>
+							<a href="../主页.HTML#011_1">011_1</a>
+							<a href="../主页.HTML#020_1">020_1</a><br />
+							<a href="../主页.HTML#024_1">024_1</a>
+							<a href="../主页.HTML#024_2">024_2</a>
+							<a href="../主页.HTML#043_2">043_2</a><br />
+							<a href="../主页.HTML#045_1">045_1</a>
+							<a href="../主页.HTML#045_2">045_2</a>
+							<a href="../主页.HTML#046_2">046_2</a><br />
+							<a href="../主页.HTML#053_2">053_2</a>
+							<a href="../主页.HTML#054_2">054_2</a>
+							<a href="../主页.HTML#055_2">055_2</a><br />
+							<a href="../主页.HTML#060_1">060_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="010">
+								<a href="物品图片/010.pngx">010</a>
+							</a>
+						</td>
+						<td>SAVORY</td>
+						<td>药草的一种。使用后TP最大值上升5% </td>
+						<td> </td>
+						<td>500</td>
+						<td>250</td>
+						<td>
+							<a href="../主页.HTML#004_1">004_1</a>
+							<a href="../主页.HTML#016_1">016_1</a>
+							<a href="../主页.HTML#021_1">021_1</a><br />
+							<a href="../主页.HTML#022_1">022_1</a>
+							<a href="../主页.HTML#029_2">029_2</a>
+							<a href="../主页.HTML#045_2">045_2</a><br />
+							<a href="../主页.HTML#046_2">046_2</a>
+							<a href="../主页.HTML#053_2">053_2</a>
+							<a href="../主页.HTML#054_2">054_2</a><br />
+							<a href="../主页.HTML#055_2">055_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="011">
+								<a href="物品图片/011.pngx">011</a>
+							</a>
+						</td>
+						<td>VERBENA</td>
+						<td>药草的一种。使用后敏捷值上升1点 </td>
+						<td> </td>
+						<td>1500</td>
+						<td>750</td>
+						<td>
+							<a href="../主页.HTML#012_2">012_2</a>
+							<a href="../主页.HTML#019_2">019_2</a>
+							<a href="../主页.HTML#022_1">022_1</a><br />
+							<a href="../主页.HTML#039_2">039_2</a>
+							<a href="../主页.HTML#053_1">053_1</a>
+							<a href="../主页.HTML#054_2">054_2</a><br /></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="012">
+								<a href="物品图片/012.pngx">012</a>
+							</a>
+						</td>
+						<td>LAVENDER</td>
+						<td>药草的一种。使用后力量值上升1点 </td>
+						<td> </td>
+						<td>1800</td>
+						<td>900</td>
+						<td>
+							<a href="../主页.HTML#007_2">007_2</a>
+							<a href="../主页.HTML#017_1">017_1</a>
+							<a href="../主页.HTML#020_1">020_1</a><br />
+							<a href="../主页.HTML#030_1">030_1</a>
+							<a href="../主页.HTML#036_1">036_1</a>
+							<a href="../主页.HTML#046_2">046_2</a><br />
+							<a href="../主页.HTML#053_1">053_1</a>
+							<a href="../主页.HTML#054_2">054_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="013">
+								<a href="物品图片/013.pngx">013</a>
+							</a>
+						</td>
+						<td>REDSAGE</td>
+						<td>药草的一种。使用后HP最大值上升10% </td>
+						<td> </td>
+						<td>1200</td>
+						<td>600</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="014">
+								<a href="物品图片/014.pngx">014</a>
+							</a>
+						</td>
+						<td>REDSAVRY</td>
+						<td>药草的一种。使用后TP最大值上升10% </td>
+						<td> </td>
+						<td>1200</td>
+						<td>600</td>
+						<td>
+							<a href="../主页.HTML#012_1">012_1</a>
+							<a href="../主页.HTML#012_2">012_2</a>
+							<a href="../主页.HTML#059_2">059_2</a><br /></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="015">
+								<a href="物品图片/015.pngx">015</a>
+							</a>
+						</td>
+						<td>REDVERBA</td>
+						<td>药草的一种。使用后敏捷值上升2点 </td>
+						<td> </td>
+						<td>2500</td>
+						<td>1250</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="016">
+								<a href="物品图片/016.pngx">016</a>
+							</a>
+						</td>
+						<td>REDLADER</td>
+						<td>药草的一种。使用后力量值上升2点 </td>
+						<td> </td>
+						<td>2220</td>
+						<td>1110</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="017">
+								<a href="物品图片/017.pngx">017</a>
+							</a>
+						</td>
+						<td>PANACEA</td>
+						<td>万能药。中毒·麻痹·石化等异常状态回复 </td>
+						<td> </td>
+						<td>350</td>
+						<td>175</td>
+						<td>
+							<a href="../主页.HTML#007_1">007_1</a>
+							<a href="../主页.HTML#025_1">025_1</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#141">141</a>
+							<a href="../主页.HTML#020">020</a>
+							<a href="../主页.HTML#223">223</a><br />
+							<a href="../主页.HTML#200">200</a>
+							<a href="../主页.HTML#197">197</a>
+							<a href="../主页.HTML#187">187</a><br />
+							<a href="../主页.HTML#147">147</a>
+							<a href="../主页.HTML#101">101</a>
+							<a href="../主页.HTML#062">062</a><br />
+							<a href="../主页.HTML#059">059</a>
+							<a href="../主页.HTML#057">057</a>
+							<a href="../主页.HTML#054">054</a><br /></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="018">
+								<a href="物品图片/018.pngx">018</a>
+							</a>
+						</td>
+						<td>LIFE</td>
+						<td>生命之水。让据干战斗不能状态的同伴复活 </td>
+						<td> </td>
+						<td>300</td>
+						<td>150</td>
+						<td>
+							<a href="../主页.HTML#002_1">002_1</a>
+							<a href="../主页.HTML#003_1">003_1</a>
+							<a href="../主页.HTML#021_2">021_2</a><br />
+							<a href="../主页.HTML#022_1">022_1</a>
+							<a href="../主页.HTML#030_2">030_2</a>
+							<a href="../主页.HTML#036_1">036_1</a><br />
+							<a href="../主页.HTML#039_2">039_2</a>
+							<a href="../主页.HTML#045_1">045_1</a>
+							<a href="../主页.HTML#057_2">057_2</a><br />
+							<a href="../主页.HTML#060_2">060_2</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#187">187</a>
+							<a href="../主页.HTML#202">202</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="019">
+								<a href="物品图片/019.pngx">019</a>
+							</a>
+						</td>
+						<td>FLARE</td>
+						<td>烈酒。在战斗中使用后一定时间内攻击力30%上升 </td>
+						<td> </td>
+						<td>150</td>
+						<td>75</td>
+						<td>
+							<a href="../主页.HTML#055_2">055_2</a>
+							<a href="../主页.HTML#057_2">057_2</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#180">180</a>
+							<a href="../主页.HTML#119">119</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="020">
+								<a href="物品图片/020.pngx">020</a>
+							</a>
+						</td>
+						<td>SYRUP</td>
+						<td>短时间内中毒麻石化无效但是在此期间攻击力20%减少 </td>
+						<td> </td>
+						<td>60</td>
+						<td>30</td>
+						<td>
+							<a href="../主页.HTML#012_1">012_1</a>
+							<a href="../主页.HTML#022_1">022_1</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#202">202</a>
+							<a href="../主页.HTML#109">109</a>
+							<a href="../主页.HTML#060">060</a><br />
+							<a href="../主页.HTML#043">043</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="021">
+								<a href="物品图片/021.pngx">021</a>
+							</a>
+						</td>
+						<td>HOLY</td>
+						<td>圣气壶有着让敌人不敢靠近的效果 </td>
+						<td> </td>
+						<td>80</td>
+						<td>40</td>
+						<td>
+							<a href="../主页.HTML#021_2">021_2</a>
+							<a href="../主页.HTML#036_1">036_1</a>
+							<a href="../主页.HTML#039_2">039_2</a><br />
+							<a href="../主页.HTML#043_2">043_2</a>
+							<a href="../主页.HTML#045_1">045_1</a>
+							<a href="../主页.HTML#045_2">045_2</a><br />
+							<a href="../主页.HTML#046_2">046_2</a>
+							<a href="../主页.HTML#055_2">055_2</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#174">174</a>
+							<a href="../主页.HTML#079">079</a>
+							<a href="../主页.HTML#067">067</a><br /></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="022">
+								<a href="物品图片/022.pngx">022</a>
+							</a>
+						</td>
+						<td>DARK</td>
+						<td>邪气壶有着让敌人积极靠近的效果 </td>
+						<td> </td>
+						<td>20</td>
+						<td>10</td>
+						<td>
+							<a href="../主页.HTML#022_1">022_1</a>
+							<a href="../主页.HTML#055_2">055_2</a>
+							<a href="../主页.HTML#057_2">057_2</a><br />
+							<a href="../主页.HTML#060_1">060_1</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#212">212</a>
+							<a href="../主页.HTML#205">205</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="023">
+								<a href="物品图片/023.pngx">023</a>
+							</a>
+						</td>
+						<td>RUNE</td>
+						<td>魔力瓶。对道具使用后会有奇迹发生 </td>
+						<td> </td>
+						<td>3500</td>
+						<td>1750</td>
+						<td>
+							<a href="../主页.HTML#010_2">010_2</a>
+							<a href="../主页.HTML#015_1">015_1</a>
+							<a href="../主页.HTML#019_1">019_1</a><br />
+							<a href="../主页.HTML#019_2">019_2</a>
+							<a href="../主页.HTML#022_1">022_1</a>
+							<a href="../主页.HTML#026_1">026_1</a><br />
+							<a href="../主页.HTML#030_1">030_1</a>
+							<a href="../主页.HTML#031_1">031_1</a>
+							<a href="../主页.HTML#044_1">044_1</a><br />
+							<a href="../主页.HTML#045_2">045_2</a>
+							<a href="../主页.HTML#054_1">054_1</a>
+							<a href="../主页.HTML#054_2">054_2</a><br />
+							<a href="../主页.HTML#055_1">055_1</a>
+							<a href="../主页.HTML#055_2">055_2</a>
+							<a href="../主页.HTML#056_2">056_2</a><br />
+							<a href="../主页.HTML#059_2">059_2</a>
+							<a href="../主页.HTML#060_1">060_1</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#127">127</a>
+							<a href="../主页.HTML#068">068</a>
+							<a href="../主页.HTML#027">027</a><br />
+							<a href="../主页.HTML#007">007</a>
+							<a href="../主页.HTML#005">005</a>
+							<a href="../主页.HTML#206">206</a><br />
+							<a href="../主页.HTML#204">204</a>
+							<a href="../主页.HTML#170">170</a>
+							<a href="../主页.HTML#169">169</a><br />
+							<a href="../主页.HTML#161">161</a>
+							<a href="../主页.HTML#148">148</a>
+							<a href="../主页.HTML#142">142</a><br />
+							<a href="../主页.HTML#125">125</a>
+							<a href="../主页.HTML#116">116</a>
+							<a href="../主页.HTML#097">097</a><br />
+							<a href="../主页.HTML#076">076</a>
+							<a href="../主页.HTML#045">045</a>
+							<a href="../主页.HTML#019">019</a><br />
+							<a href="../主页.HTML#011">011</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="024">
+								<a href="物品图片/024.pngx">024</a>
+							</a>
+						</td>
+						<td>CHARM</td>
+						<td>能够引发出你的潜在魅力的魔法壶商店里的商品七折优惠 </td>
+						<td> </td>
+						<td>2500</td>
+						<td>1250</td>
+						<td>
+							<a href="../主页.HTML#010_1">010_1</a>
+							<a href="../主页.HTML#015_1">015_1</a>
+							<a href="../主页.HTML#016_1">016_1</a><br />
+							<a href="../主页.HTML#021_1">021_1</a>
+							<a href="../主页.HTML#025_1">025_1</a>
+							<a href="../主页.HTML#031_2">031_2</a><br />
+							<a href="../主页.HTML#037_2">037_2</a>
+							<a href="../主页.HTML#045_1">045_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="025">
+								<a href="物品图片/025.pngx">025</a>
+							</a>
+						</td>
+						<td>S·CHARM</td>
+						<td>能够引引发出你更加绝妙的潜在魅力的魔法壶。商店里的商品五折优惠 </td>
+						<td> </td>
+						<td>6000</td>
+						<td>3000</td>
+						<td>
+							<a href="../主页.HTML#059_1">059_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="026">
+								<a href="物品图片/026.pngx">026</a>
+							</a>
+						</td>
+						<td>WORLDMAP</td>
+						<td>世界地图。可以了解自己现在所据的位置以及世界各地的资料 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="027">
+								<a href="物品图片/027.pngx">027</a>
+							</a>
+						</td>
+						<td>ORB</td>
+						<td>可以调整敌人的出现机率的魔法宝珠 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="028">
+								<a href="物品图片/028.pngx">028</a>
+							</a>
+						</td>
+						<td>HOURGLAS</td>
+						<td>战斗中使用可以让敌人短时间停止行动。奇妙的道具 </td>
+						<td> </td>
+						<td>3000</td>
+						<td>1500</td>
+						<td>
+							<a href="../主页.HTML#011_1">011_1</a>
+							<a href="../主页.HTML#019_2">019_2</a>
+							<a href="../主页.HTML#021_1">021_1</a><br />
+							<a href="../主页.HTML#030_1">030_1</a>
+							<a href="../主页.HTML#046_2">046_2</a>
+							<a href="../主页.HTML#054_1">054_1</a><br />
+							<a href="../主页.HTML#055_2">055_2</a>
+							<a href="../主页.HTML#059_2">059_2</a>
+							<a href="../主页.HTML#060_1">060_1</a><br /></td>
+						<td>
+							<a href="../主页.HTML#011">011</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="029">
+								<a href="物品图片/029.pngx">029</a>
+							</a>
+						</td>
+						<td>CHRONOG</td>
+						<td>掌管时间的神所拥有的计时沙漏：可以让敌人长时间停止行动 </td>
+						<td> </td>
+						<td>7000</td>
+						<td>3500</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="030">
+								<a href="物品图片/030.pngx">030</a>
+							</a>
+						</td>
+						<td>COUNTER</td>
+						<td>可以调节战斗连击数的表示开关的道具 </td>
+						<td> </td>
+						<td>2000</td>
+						<td>1000</td>
+						<td>
+							<a href="../主页.HTML#019_1">019_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="031">
+								<a href="物品图片/031.pngx">031</a>
+							</a>
+						</td>
+						<td>LENS</td>
+						<td>可以窥探到敌人HP·TP·属性的奇妙透镜 </td>
+						<td> </td>
+						<td>10</td>
+						<td>5</td>
+						<td>
+							<a href="../主页.HTML#010_2">010_2</a>
+							<a href="../主页.HTML#012_1">012_1</a>
+							<a href="../主页.HTML#015_1">015_1</a><br />
+							<a href="../主页.HTML#016_1">016_1</a>
+							<a href="../主页.HTML#021_2">021_2</a>
+							<a href="../主页.HTML#022_1">022_1</a><br />
+							<a href="../主页.HTML#024_1">024_1</a>
+							<a href="../主页.HTML#045_1">045_1</a>
+							<a href="../主页.HTML#053_2">053_2</a><br />
+							<a href="../主页.HTML#054_1">054_1</a>
+							<a href="../主页.HTML#055_2">055_2</a>
+							<a href="../主页.HTML#057_2">057_2</a><br /></td>
+						<td>
+							<a href="../主页.HTML#179">179</a>
+							<a href="../主页.HTML#134">134</a>
+							<a href="../主页.HTML#077">077</a><br />
+							<a href="../主页.HTML#057">057</a>
+							<a href="../主页.HTML#006">006</a>
+							<a href="../主页.HTML#199">199</a><br />
+							<a href="../主页.HTML#198">198</a>
+							<a href="../主页.HTML#181">181</a>
+							<a href="../主页.HTML#127">127</a><br />
+							<a href="../主页.HTML#120">120</a>
+							<a href="../主页.HTML#110">110</a>
+							<a href="../主页.HTML#049">049</a><br />
+							<a href="../主页.HTML#027">027</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="032">
+								<a href="物品图片/032.pngx">032</a>
+							</a>
+						</td>
+						<td>PICKAXE</td>
+						<td>镐的一种。用于击毁岩石 </td>
+						<td> </td>
+						<td>150</td>
+						<td>75</td>
+						<td>
+							<a href="../主页.HTML#018_2">018_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="033">
+								<a href="物品图片/033.pngx">033</a>
+							</a>
+						</td>
+						<td>LIPSTICK</td>
+						<td>可以使用很多次的魔法口红商店里的商品？折优惠 </td>
+						<td> </td>
+						<td>2000</td>
+						<td>1000</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="034">
+								<a href="物品图片/034.pngx">034</a>
+							</a>
+						</td>
+						<td>LANTERN</td>
+						<td>可以发出红色火焰的灯笼黑暗中使用会发出红色的光芒 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#060_2">060_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="035">
+								<a href="物品图片/035.pngx">035</a>
+							</a>
+						</td>
+						<td>TORCH</td>
+						<td>可以发出绿色火焰的火把黑暗中使用会发出绿色的光芒 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="036">
+								<a href="物品图片/036.pngx">036</a>
+							</a>
+						</td>
+						<td>CANDLE</td>
+						<td>可以发出蓝色火焰的灯台黑暗中使用会发出蓝色的光芒 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="037">
+								<a href="物品图片/037.pngx">037</a>
+							</a>
+						</td>
+						<td>ROPE</td>
+						<td>高处向低处降下的时候必须用到的麻绳 </td>
+						<td> </td>
+						<td>100</td>
+						<td>50</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="038">
+								<a href="物品图片/038.pngx">038</a>
+							</a>
+						</td>
+						<td>DRUMSET</td>
+						<td>鼓与铜钱的套装。尝试下鼓手的感觉吧 </td>
+						<td> </td>
+						<td>10000</td>
+						<td>5000</td>
+						<td>
+							<a href="../主页.HTML#052_2">052_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="039">
+								<a href="物品图片/039.pngx">039</a>
+							</a>
+						</td>
+						<td>TABLET</td>
+						<td>魔工匠以魔象的牙为原料制成的魔道具。似乎蕴藏着特殊的魔力 </td>
+						<td> </td>
+						<td>2000</td>
+						<td>1000</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="040">
+								<a href="物品图片/040.pngx">040</a>
+							</a>
+						</td>
+						<td>MONSTER</td>
+						<td>能够收集敌人的形态和资料的图鉴。以完全收录为目标吧 ！ </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="041">
+								<a href="物品图片/041.pngx">041</a>
+							</a>
+						</td>
+						<td>COLLECTO</td>
+						<td>道具收集家所不可缺少的图鉴。有东西忘了拿吗 ？ </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="042">
+								<a href="物品图片/042.pngx">042</a>
+							</a>
+						</td>
+						<td>TICKET</td>
+						<td>观赏音乐会的入场券 </td>
+						<td> </td>
+						<td>200</td>
+						<td>100</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="043">
+								<a href="物品图片/043.pngx">043</a>
+							</a>
+						</td>
+						<td>CARROT</td>
+						<td>颜色和样子都很可爱的蔬菜加热食用味道可口 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#021_2">021_2</a>
+							<a href="../主页.HTML#051_1">051_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="044">
+								<a href="物品图片/044.pngx">044</a>
+							</a>
+						</td>
+						<td>CABBAGE</td>
+						<td>有将那些生吃熟吃都可的蔬菜以刀功切细的技术为竞技的项目 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#012_2">012_2</a>
+							<a href="../主页.HTML#051_1">051_1</a>
+							<a href="../主页.HTML#057_2">057_2</a><br /></td>
+						<td>
+							<a href="../主页.HTML#171">171</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="045">
+								<a href="物品图片/045.pngx">045</a>
+							</a>
+						</td>
+						<td>LETTUCE</td>
+						<td>增加了专门为了配合沙拉的蔬菜是沙拉之王 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td>
+							<a href="../主页.HTML#030">030</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="046">
+								<a href="物品图片/046.pngx">046</a>
+							</a>
+						</td>
+						<td>RADISH</td>
+						<td>做杂煮的材料之一。用来形容女性美腿的蔬菜 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="047">
+								<a href="物品图片/047.pngx">047</a>
+							</a>
+						</td>
+						<td>CUCUMBER</td>
+						<td>属豆科的野菜。成熟后呈黄色一般都以绿色时食用为主 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td>
+							<a href="../主页.HTML#139">139</a>
+							<a href="../主页.HTML#078">078</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="048">
+								<a href="物品图片/048.pngx">048</a>
+							</a>
+						</td>
+						<td>POTATO</td>
+						<td>虽然有各种各样的料理方式，但不削皮煮后直接沾盐吃却别有风味 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td>
+							<a href="../主页.HTML#061">061</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="049">
+								<a href="物品图片/049.pngx">049</a>
+							</a>
+						</td>
+						<td>TOMATO</td>
+						<td>冷热均可食用的蔬菜也可当做果汁的素材 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td>
+							<a href="../主页.HTML#139">139</a>
+							<a href="../主页.HTML#078">078</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="050">
+								<a href="物品图片/050.pngx">050</a>
+							</a>
+						</td>
+						<td>ONION</td>
+						<td>各地都可以种植的流行蔬菜取其根部食用 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#051_1">051_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="051">
+								<a href="物品图片/051.pngx">051</a>
+							</a>
+						</td>
+						<td>APPLE</td>
+						<td>很甜的苹果。一般食料店有售味道不错 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#036_2">036_2</a>
+							<a href="../主页.HTML#053_2">053_2</a>
+							<a href="../主页.HTML#054_2">054_2</a><br />
+							<a href="../主页.HTML#055_2">055_2</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#185">185</a>
+							<a href="../主页.HTML#121">121</a>
+							<a href="../主页.HTML#037">037</a><br />
+							<a href="../主页.HTML#029">029</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="052">
+								<a href="物品图片/052.pngx">052</a>
+							</a>
+						</td>
+						<td>LEMON</td>
+						<td>不知名的水果。吃起来既清爽并带点酸味 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="053">
+								<a href="物品图片/053.pngx">053</a>
+							</a>
+						</td>
+						<td>CAOMEI</td>
+						<td>不但颜色好看而且味道鲜美的水果是少女们所喜爱的水果之一 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#054_1">054_1</a>
+							<a href="../主页.HTML#055_2">055_2</a>
+							<a href="../主页.HTML#056_2">056_2</a><br /></td>
+						<td>
+							<a href="../主页.HTML#137">137</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="054">
+								<a href="物品图片/054.pngx">054</a>
+							</a>
+						</td>
+						<td>BANANA</td>
+						<td>黄色的外皮里是白色而柔软的果肉 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#054_1">054_1</a>
+							<a href="../主页.HTML#054_2">054_2</a>
+							<a href="../主页.HTML#055_1">055_1</a><br /></td>
+						<td>
+							<a href="../主页.HTML#137">137</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="055">
+								<a href="物品图片/055.pngx">055</a>
+							</a>
+						</td>
+						<td>PINAPPLE</td>
+						<td>热带水果。成熟之后的果实特别美味而且没有任何病虫 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#054_1">054_1</a>
+							<a href="../主页.HTML#055_1">055_1</a>
+							<a href="../主页.HTML#055_2">055_2</a><br /></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="056">
+								<a href="物品图片/056.pngx">056</a>
+							</a>
+						</td>
+						<td>MELON</td>
+						<td>具有高级感而且美味的果实多数用来作赠品 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#031_1">031_1</a>
+							<a href="../主页.HTML#053_1">053_1</a>
+							<a href="../主页.HTML#054_1">054_1</a><br />
+							<a href="../主页.HTML#055_1">055_1</a>
+							<a href="../主页.HTML#055_2">055_2</a>
+							<a href="../主页.HTML#056_1">056_1</a><br /></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="057">
+								<a href="物品图片/057.pngx">057</a>
+							</a>
+						</td>
+						<td>GRAPES</td>
+						<td>葡萄树的果实。味道甜美汁水很多 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#054_1">054_1</a>
+							<a href="../主页.HTML#055_1">055_1</a>
+							<a href="../主页.HTML#055_2">055_2</a><br />
+							<a href="../主页.HTML#056_1">056_1</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#185">185</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="058">
+								<a href="物品图片/058.pngx">058</a>
+							</a>
+						</td>
+						<td>FRUIT</td>
+						<td>弟切草科果树的果实。果肉是栗子的香味，非常美味 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#031_1">031_1</a>
+							<a href="../主页.HTML#053_2">053_2</a>
+							<a href="../主页.HTML#054_1">054_1</a><br />
+							<a href="../主页.HTML#055_1">055_1</a>
+							<a href="../主页.HTML#056_1">056_1</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#121">121</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="059">
+								<a href="物品图片/059.pngx">059</a>
+							</a>
+						</td>
+						<td>PRUNE</td>
+						<td>西洋李子的果实。干燥之后可以做成果酱，非常不错 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#054_2">054_2</a>
+							<a href="../主页.HTML#056_1">056_1</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#029">029</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="060">
+								<a href="物品图片/060.pngx">060</a>
+							</a>
+						</td>
+						<td>TUNA</td>
+						<td>人们都爱吃的鱼。冬天非常美味 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#015_2">015_2</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#188">188</a>
+							<a href="../主页.HTML#191">191</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="061">
+								<a href="物品图片/061.pngx">061</a>
+							</a>
+						</td>
+						<td>MACKEREL</td>
+						<td>淡水鱼。身体侧面的特征很明显 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td>
+							<a href="../主页.HTML#094">094</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="062">
+								<a href="物品图片/062.pngx">062</a>
+							</a>
+						</td>
+						<td>SARDINE</td>
+						<td>除了食用以外还有多种用途的白色鱼。很美味哦 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td>
+							<a href="../主页.HTML#191">191</a>
+							<a href="../主页.HTML#188">188</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="063">
+								<a href="物品图片/063.pngx">063</a>
+							</a>
+						</td>
+						<td>SQUID</td>
+						<td>在部分地方被当成海之恶魔的，有着十只脚的软体动物。可以食用 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td>
+							<a href="../主页.HTML#040">040</a>
+							<a href="../主页.HTML#215">215</a>
+							<a href="../主页.HTML#091">091</a><br />
+							<a href="../主页.HTML#052">052</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="064">
+								<a href="物品图片/064.pngx">064</a>
+							</a>
+						</td>
+						<td>OCTOPUS</td>
+						<td>在部分地方被当成海之恶魔的，有着八只脚的软体动物。可以食用 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td>
+							<a href="../主页.HTML#215">215</a>
+							<a href="../主页.HTML#091">091</a>
+							<a href="../主页.HTML#052">052</a><br />
+							<a href="../主页.HTML#040">040</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="065">
+								<a href="物品图片/065.pngx">065</a>
+							</a>
+						</td>
+						<td>SHRIMP</td>
+						<td>外面坚硬而里面柔软的奇特生物。长寿的象征 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#039_2">039_2</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#040">040</a>
+							<a href="../主页.HTML#188">188</a>
+							<a href="../主页.HTML#099">099</a><br />
+							<a href="../主页.HTML#017">017</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="066">
+								<a href="物品图片/066.pngx">066</a>
+							</a>
+						</td>
+						<td>CHICKEN</td>
+						<td>鸡肉。是野鸡的肉品质绝对放心 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#022_1">022_1</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#213">213</a>
+							<a href="../主页.HTML#166">166</a>
+							<a href="../主页.HTML#144">144</a><br />
+							<a href="../主页.HTML#105">105</a>
+							<a href="../主页.HTML#089">089</a>
+							<a href="../主页.HTML#047">047</a><br />
+							<a href="../主页.HTML#044">044</a>
+							<a href="../主页.HTML#022">022</a>
+							<a href="../主页.HTML#003">003</a><br /></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="067">
+								<a href="物品图片/067.pngx">067</a>
+							</a>
+						</td>
+						<td>BEEF</td>
+						<td>牛肉。肉具有良好的品质是由干在大自然中养育的原因 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#009_1">009_1</a>
+							<a href="../主页.HTML#017_1">017_1</a>
+							<a href="../主页.HTML#025_1">025_1</a><br />
+							<a href="../主页.HTML#031_1">031_1</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#061">061</a>
+							<a href="../主页.HTML#035">035</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="068">
+								<a href="物品图片/068.pngx">068</a>
+							</a>
+						</td>
+						<td>PORK</td>
+						<td>猪肉。适度减肥的良方 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#051_1">051_1</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#177">177</a>
+							<a href="../主页.HTML#176">176</a>
+							<a href="../主页.HTML#175">175</a><br /></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="069">
+								<a href="物品图片/069.pngx">069</a>
+							</a>
+						</td>
+						<td>MILK</td>
+						<td>牛的乳汁。具有丰富的营养早上一瓶整天精神倍爽 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#007_1">007_1</a>
+							<a href="../主页.HTML#007_2">007_2</a>
+							<a href="../主页.HTML#047_1">047_1</a><br />
+							<a href="../主页.HTML#059_2">059_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="070">
+								<a href="物品图片/070.pngx">070</a>
+							</a>
+						</td>
+						<td>CHEESE</td>
+						<td>由动物的奶而成的固体食物。带有浓厚的香味 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#004_1">004_1</a>
+							<a href="../主页.HTML#007_1">007_1</a>
+							<a href="../主页.HTML#009_1">009_1</a><br />
+							<a href="../主页.HTML#060_1">060_1</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#179">179</a>
+							<a href="../主页.HTML#134">134</a>
+							<a href="../主页.HTML#131">131</a><br /></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="071">
+								<a href="物品图片/071.pngx">071</a>
+							</a>
+						</td>
+						<td>KONJAC</td>
+						<td>将茎磨成粉与石灰乳混合而成的食品 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="072">
+								<a href="物品图片/072.pngx">072</a>
+							</a>
+						</td>
+						<td>KELP</td>
+						<td>关东煮的材料之一。含有丰富的矿物质 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="073">
+								<a href="物品图片/073.pngx">073</a>
+							</a>
+						</td>
+						<td>EGG</td>
+						<td>在各种料理中经常运用的食材。含有丰富的蛋白质 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td>
+							<a href="../主页.HTML#223">223</a>
+							<a href="../主页.HTML#213">213</a>
+							<a href="../主页.HTML#166">166</a><br />
+							<a href="../主页.HTML#144">144</a>
+							<a href="../主页.HTML#105">105</a>
+							<a href="../主页.HTML#089">089</a><br />
+							<a href="../主页.HTML#047">047</a>
+							<a href="../主页.HTML#044">044</a>
+							<a href="../主页.HTML#022">022</a><br />
+							<a href="../主页.HTML#003">003</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="074">
+								<a href="物品图片/074.pngx">074</a>
+							</a>
+						</td>
+						<td>MISO</td>
+						<td>厨师精心制作的味道。经常被用在关东煮中 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="075">
+								<a href="物品图片/075.pngx">075</a>
+							</a>
+						</td>
+						<td>BREAD</td>
+						<td>经过特别方法烤制的十分香甜的面包 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#009_1">009_1</a>
+							<a href="../主页.HTML#010_1">010_1</a>
+							<a href="../主页.HTML#024_2">024_2</a><br />
+							<a href="../主页.HTML#036_2">036_2</a>
+							<a href="../主页.HTML#058_2">058_2</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#170">170</a>
+							<a href="../主页.HTML#142">142</a>
+							<a href="../主页.HTML#025">025</a><br />
+							<a href="../主页.HTML#011">011</a>
+							<a href="../主页.HTML#181">181</a>
+							<a href="../主页.HTML#131">131</a><br />
+							<a href="../主页.HTML#195">195</a>
+							<a href="../主页.HTML#194">194</a>
+							<a href="../主页.HTML#151">151</a><br />
+							<a href="../主页.HTML#106">106</a>
+							<a href="../主页.HTML#012">012</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="076">
+								<a href="物品图片/076.pngx">076</a>
+							</a>
+						</td>
+						<td>RICE</td>
+						<td>用白米所制。由于很难掌握水量、需要相当的技术 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td>
+							<a href="../主页.HTML#138">138</a>
+							<a href="../主页.HTML#135">135</a>
+							<a href="../主页.HTML#126">126</a><br />
+							<a href="../主页.HTML#074">074</a>
+							<a href="../主页.HTML#051">051</a>
+							<a href="../主页.HTML#039">039</a><br /></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="077">
+								<a href="物品图片/077.pngx">077</a>
+							</a>
+						</td>
+						<td>SEAWEED</td>
+						<td>大面积呈干燥的板块状 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="078">
+								<a href="物品图片/078.pngx">078</a>
+							</a>
+						</td>
+						<td>SPICE</td>
+						<td>料理调味中不可缺少的香辛料。也被运用在药材中 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#046_1">046_1</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#008">008</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="079">
+								<a href="物品图片/079.pngx">079</a>
+							</a>
+						</td>
+						<td>PASTA</td>
+						<td>意大利面条和通心粉等的总称。也有“调出来的东西”的意思 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="080">
+								<a href="物品图片/080.pngx">080</a>
+							</a>
+						</td>
+						<td>L·SWORD</td>
+						<td>刀刃的长度为90厘米的铁制长剑 </td>
+						<td>SLTH55ACC0AGL0DEF0EVA0LCK</td>
+						<td>140</td>
+						<td>70</td>
+						<td>
+							<a href="../主页.HTML#039_2">039_2</a>
+							<a href="../主页.HTML#059_1">059_1</a>
+							<a href="../主页.HTML#059_2">059_2</a><br /></td>
+						<td>
+							<a href="../主页.HTML#092">092</a>
+							<a href="../主页.HTML#136">136</a>
+							<a href="../主页.HTML#118">118</a><br />
+							<a href="../主页.HTML#117">117</a>
+							<a href="../主页.HTML#114">114</a>
+							<a href="../主页.HTML#093">093</a><br />
+							<a href="../主页.HTML#066">066</a>
+							<a href="../主页.HTML#002">002</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="081">
+								<a href="物品图片/081.pngx">081</a>
+							</a>
+						</td>
+						<td>SABER</td>
+						<td>直刀型专用于斩击的刀剑 </td>
+						<td>SLTH85ACC0AGL0DEF0EVA0LCK</td>
+						<td>200</td>
+						<td>100</td>
+						<td>
+							<a href="../主页.HTML#007_1">007_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="082">
+								<a href="物品图片/082.pngx">082</a>
+							</a>
+						</td>
+						<td>RAPIER</td>
+						<td>专用于突刺攻击的细剑 </td>
+						<td>SLTHACC20AGL0DEF0EVA0LCK</td>
+						<td>180</td>
+						<td>90</td>
+						<td>
+							<a href="../主页.HTML#004_1">004_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="083">
+								<a href="物品图片/083.pngx">083</a>
+							</a>
+						</td>
+						<td>KNIGHT</td>
+						<td>尤库里特黑铁骑士团所使用的剑。切割的锋利度很好 </td>
+						<td>SL1THACC0AGL0DEF0EVA0LCK属性-火</td>
+						<td>700</td>
+						<td>350</td>
+						<td></td>
+						<td>
+							<a href="../主页.HTML#010">010</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="084">
+								<a href="物品图片/084.pngx">084</a>
+							</a>
+						</td>
+						<td>VERDUN</td>
+						<td>西洋刺剑的一种。剑的尖端比较锐利，用于突刺攻击的威力较高 </td>
+						<td>SLTH28ACC22AGL0DEF0EVA0LCK</td>
+						<td>700</td>
+						<td>350</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="085">
+								<a href="物品图片/085.pngx">085</a>
+							</a>
+						</td>
+						<td>CRACK</td>
+						<td>西洋刺剑的一种。受到机能上的洗练、便于使用 </td>
+						<td>SLTH35ACC25AGL0DEF0EVA0LCK</td>
+						<td>1400</td>
+						<td>700</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="086">
+								<a href="物品图片/086.pngx">086</a>
+							</a>
+						</td>
+						<td>F·SABER</td>
+						<td>半曲刀类的高品质刀剑 </td>
+						<td>SL25TH18ACC0AGL0DEF0EVA0LCK</td>
+						<td>700</td>
+						<td>350</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="087">
+								<a href="物品图片/087.pngx">087</a>
+							</a>
+						</td>
+						<td>WALLOON</td>
+						<td>长剑约有一人长的长剑 </td>
+						<td>SL50TH50ACC0AGL0DEF0EVA0LCK</td>
+						<td>1600</td>
+						<td>800</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="088">
+								<a href="物品图片/088.pngx">088</a>
+							</a>
+						</td>
+						<td>FAMEFACE</td>
+						<td>极其薄、极其锋利的弯刀深蓝的刀身上浮现着缘色的条纹 </td>
+						<td>SL108TH60ACC0AGL0DEF0EVA0LCK属性-水</td>
+						<td>11000</td>
+						<td>5500</td>
+						<td>
+							<a href="../主页.HTML#060_1">060_1</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#193">193</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="089">
+								<a href="物品图片/089.pngx">089</a>
+							</a>
+						</td>
+						<td>SLAYER</td>
+						<td>以将世间所有人杀掉为目的而制造魔剑 </td>
+						<td>SL200TH200ACC30AGL0DEF0EVA0LCK属性-地</td>
+						<td>1000</td>
+						<td>500</td>
+						<td>
+							<a href="../主页.HTML#014_1">014_1</a>
+							<a href="../主页.HTML#029_1">029_1</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#117">117</a>
+							<a href="../主页.HTML#074">074</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="090">
+								<a href="物品图片/090.pngx">090</a>
+							</a>
+						</td>
+						<td>MOONFALX</td>
+						<td>光之剑。闪射出如月光一般淡淡的、寒冷的光芒 </td>
+						<td>SL260TH200ACC10AGL0DEF0EVA0LCK属性-光</td>
+						<td>56600</td>
+						<td>28300</td>
+						<td></td>
+						<td>
+							<a href="../主页.HTML#114">114</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="091">
+								<a href="物品图片/091.pngx">091</a>
+							</a>
+						</td>
+						<td>DAMASCUS</td>
+						<td>弹力和持久性良好的有机钢铁做成的长剑 </td>
+						<td>SL3.50TH315ACC0AGL0DEF0EVA0LCK</td>
+						<td>34800</td>
+						<td>17400</td>
+						<td></td>
+						<td>
+							<a href="../主页.HTML#135">135</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="092">
+								<a href="物品图片/092.pngx">092</a>
+							</a>
+						</td>
+						<td>SNCLAIRE</td>
+						<td>弯刀受到机能上的洗练 </td>
+						<td>SL424TH220ACC0AGL0DEF0EVA0LCK</td>
+						<td>49800</td>
+						<td>24900</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="093">
+								<a href="物品图片/093.pngx">093</a>
+							</a>
+						</td>
+						<td>DSTROYER</td>
+						<td>可以使用魔科学之力的剑。能够提升装备者会心一击的机率 </td>
+						<td>SL630TH290ACC10AGL0DEF0EVA0LCK</td>
+						<td>80000</td>
+						<td>40000</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="094">
+								<a href="物品图片/094.pngx">094</a>
+							</a>
+						</td>
+						<td>HOLY</td>
+						<td>受到至高的神之祝福的圣剑 </td>
+						<td>SL480TH480ACC30AGL0DEF0EVA0LCK10属性-光</td>
+						<td>88800</td>
+						<td>44400</td>
+						<td></td>
+						<td>
+							<a href="../主页.HTML#066">066</a>
+							<a href="../主页.HTML#018">018</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="095">
+								<a href="物品图片/095.pngx">095</a>
+							</a>
+						</td>
+						<td>DRAGON</td>
+						<td>用龙牙为原料锻造出的长剑 </td>
+						<td>SL140TH280ACC30AGL0DEF0EVA0LCK属性-地</td>
+						<td>23060</td>
+						<td>11530</td>
+						<td></td>
+						<td>
+							<a href="../主页.HTML#118">118</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="096">
+								<a href="物品图片/096.pngx">096</a>
+							</a>
+						</td>
+						<td>BASELARD</td>
+						<td>有着炎之恶魔弗拉姆贝鲁克的力量的细剑 </td>
+						<td>SL580TH595ACC20AGL0DEF0EVA0LCK属性-火</td>
+						<td>140000</td>
+						<td>70000</td>
+						<td></td>
+						<td>
+							<a href="../主页.HTML#136">136</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="097">
+								<a href="物品图片/097.pngx">097</a>
+							</a>
+						</td>
+						<td>COFFIN</td>
+						<td>被冠上冰之封印之名的剑以前似乎击败过赤龙 </td>
+						<td>SL595TH580ACC10AGL0DEF0EVA0LCK属性-水</td>
+						<td>140000</td>
+						<td>70000</td>
+						<td>
+							<a href="../主页.HTML#060_1">060_1</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#002">002</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="098">
+								<a href="物品图片/098.pngx">098</a>
+							</a>
+						</td>
+						<td>LASER</td>
+						<td>沉入海底的超古代都市多尔的强大科学力生产出的武器 </td>
+						<td>SL850TH650ACC60AGL0DEF0EVA0LCK属性-光</td>
+						<td>200000</td>
+						<td>100000</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="099">
+								<a href="物品图片/099.pngx">099</a>
+							</a>
+						</td>
+						<td>DUEL</td>
+						<td>授子古代王国被歌颂的英勇战士的名剑 </td>
+						<td>SL800TH780ACC10AGL0DEF0EVA0LCK属性-地</td>
+						<td>69500</td>
+						<td>34750</td>
+						<td></td>
+						<td>
+							<a href="../主页.HTML#071">071</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="100">
+								<a href="物品图片/100.pngx">100</a>
+							</a>
+						</td>
+						<td>BLESSED</td>
+						<td>受到幸运女神祝福的圣剑装备此剑的人幸运会上升 </td>
+						<td>SL800TH800ACC80AGL0DEF0EVA0LCK80</td>
+						<td>120000</td>
+						<td>60000</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="101">
+								<a href="物品图片/101.pngx">101</a>
+							</a>
+						</td>
+						<td>MURAMASA</td>
+						<td>幻之制法锻造出的名刀村正。那个切割的锋利度不会使敌人感到疼痛 </td>
+						<td>SL750TH400ACC100AGL0DEF0EVA0LCK</td>
+						<td>121600</td>
+						<td>60800</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="102">
+								<a href="物品图片/102.pngx">102</a>
+							</a>
+						</td>
+						<td>WASIER</td>
+						<td>据说是某个有名的贵族佩带的细身剑 </td>
+						<td>SL700TH1200ACC10AGL0DEF0EVA0LCK</td>
+						<td>68000</td>
+						<td>34000</td>
+						<td>
+							<a href="../主页.HTML#045_1">045_1</a>
+							<a href="../主页.HTML#056_1">056_1</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#083">083</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="103">
+								<a href="物品图片/103.pngx">103</a>
+							</a>
+						</td>
+						<td>SAINT</td>
+						<td>受到至高的神之祝福的神圣细剑 </td>
+						<td>SL300TH1600ACC10AGL0DEF0EVA0LCK属性-光</td>
+						<td>289000</td>
+						<td>144500</td>
+						<td>
+							<a href="../主页.HTML#054_1">054_1</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#104">104</a>
+							<a href="../主页.HTML#046">046</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="104">
+								<a href="物品图片/104.pngx">104</a>
+							</a>
+						</td>
+						<td>DOOM</td>
+						<td>被冠上了灾难之名的魔剑。剑身已经被吸收的灾难侵触成了黑色 </td>
+						<td>SL1300TH1100ACC10AGL0DEF0EVA0LCK属性-暗</td>
+						<td>325000</td>
+						<td>162500</td>
+						<td>
+							<a href="../主页.HTML#049_2">049_2</a>
+							<a href="../主页.HTML#053_2">053_2</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#162">162</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="105">
+								<a href="物品图片/105.pngx">105</a>
+							</a>
+						</td>
+						<td>EXCALBUR</td>
+						<td>王中王的证明。伊修塔尔传说记载的勇者墓尔加美斯所拥有的道具 </td>
+						<td>SL1390TH1390ACC50AGL0DEF0EVA0LCK</td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#060_2">060_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="106">
+								<a href="物品图片/106.pngx">106</a>
+							</a>
+						</td>
+						<td>VORPAL</td>
+						<td>以寒冰为刀身的魔剑三种传说武具之一 </td>
+						<td>SL900TH900ACC10AGL0DEF0EVA0LCK属性-水</td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="107">
+								<a href="物品图片/107.pngx">107</a>
+							</a>
+						</td>
+						<td>FLAMBEGE</td>
+						<td>以烈炎为刀身的魔剑三种传说武具之一 </td>
+						<td>SL900TH900ACC10AGL0DEF0EVA0LCK属性-火</td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="108">
+								<a href="物品图片/108.pngx">108</a>
+							</a>
+						</td>
+						<td>S·D</td>
+						<td>谜之剑。不是SUPER(英语)DEFORM的缩写 </td>
+						<td>SL1240TH1240ACC0AGL0DEF0EVA0LCK属性-火</td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="109">
+								<a href="物品图片/109.pngx">109</a>
+							</a>
+						</td>
+						<td>ETERNAL</td>
+						<td>被冠上时空（时间）之名的魔剑具有操纵时间的力量 </td>
+						<td>SL1050TH1140ACC10AGL0DEF0EVA0LCK</td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="110">
+								<a href="物品图片/110.pngx">110</a>
+							</a>
+						</td>
+						<td>RANSEUR</td>
+						<td>枪状武器的类型。有三个尖端的枪又被称作飞空枪 </td>
+						<td>SL50TH106ACC0AGL0DEF0EVA0LCK</td>
+						<td>2400</td>
+						<td>1200</td>
+						<td>
+							<a href="../主页.HTML#012_2">012_2</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#155">155</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="111">
+								<a href="物品图片/111.pngx">111</a>
+							</a>
+						</td>
+						<td>GUNGNIR</td>
+						<td>神末战争时期产生的传说之枪 </td>
+						<td>SL96TH122ACC5AGL0DEFEVA0LCK</td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#039_1">039_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="112">
+								<a href="物品图片/112.pngx">112</a>
+							</a>
+						</td>
+						<td>GRAVE</td>
+						<td>选取了弯刀刀刃的枪 </td>
+						<td>SL210TH424ACC0AGL0DEF0EVA0LCK</td>
+						<td>50560</td>
+						<td>25280</td>
+						<td>
+							<a href="../主页.HTML#014_1">014_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="113">
+								<a href="物品图片/113.pngx">113</a>
+							</a>
+						</td>
+						<td>NAGINATA</td>
+						<td>突刺和斩击威力优秀的和风枪有着女性般的美丽 </td>
+						<td>SL512TH634ACC60AGL0DEF0EVA0LCK</td>
+						<td>180000</td>
+						<td>90000</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="114">
+								<a href="物品图片/114.pngx">114</a>
+							</a>
+						</td>
+						<td>ARCWIND</td>
+						<td>被冠上伟大的风之名的枪。挥动的时候就会有龙卷风产生 </td>
+						<td>SL860TH720ACC50AGL0DEF0EVA0LCK属性-风</td>
+						<td>150000</td>
+						<td>75000</td>
+						<td>
+							<a href="../主页.HTML#053_1">053_1</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#155">155</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="115">
+								<a href="物品图片/115.pngx">115</a>
+							</a>
+						</td>
+						<td>GUNGNIR3</td>
+						<td>被解开了封印的，神末战争时的战斗神枪”真·昆古尼尔" </td>
+						<td>SL800TH1640ACC50AGL0DEF0EVA0LCK</td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="116">
+								<a href="物品图片/116.pngx">116</a>
+							</a>
+						</td>
+						<td>GUNGNIR2</td>
+						<td>神末战争时期产生的传说之枪是神马主人的证明 </td>
+						<td>SL180TH295ACC5AGLDEF0EVA0LCK</td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="117">
+								<a href="物品图片/117.pngx">117</a>
+							</a>
+						</td>
+						<td>BATTLEAX</td>
+						<td>战斧。战斗用的斧 </td>
+						<td>SL35THACC10AGL0DEF0EVA0LCK</td>
+						<td>700</td>
+						<td>350</td>
+						<td>
+							<a href="../主页.HTML#004_1">004_1</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#075">075</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="118">
+								<a href="物品图片/118.pngx">118</a>
+							</a>
+						</td>
+						<td>CRESCENT</td>
+						<td>选取三日月型作为刀刃的斧头 </td>
+						<td>SL65TH10ACC0AGL0DEF0EVA0LCK属性-光</td>
+						<td>1800</td>
+						<td>900</td>
+						<td>
+							<a href="../主页.HTML#010_2">010_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="119">
+								<a href="物品图片/119.pngx">119</a>
+							</a>
+						</td>
+						<td>BARDICHE</td>
+						<td>宽刃斧的类型斧头的攻击能力非常卓越 </td>
+						<td>SL130TH15ACC10AGL0DEF0EVA0LCK</td>
+						<td>2980</td>
+						<td>1490</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="120">
+								<a href="物品图片/120.pngx">120</a>
+							</a>
+						</td>
+						<td>STRIKEAX</td>
+						<td>拥有雷兽守护的斧头。斧刃由于带电的缘故，隐隐发出淡蓝色的光 </td>
+						<td>SL140TH20ACC10AGL0DEF0EVA0LCK属性-雷</td>
+						<td>30000</td>
+						<td>15000</td>
+						<td>
+							<a href="../主页.HTML#016_1">016_1</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#075">075</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="121">
+								<a href="物品图片/121.pngx">121</a>
+							</a>
+						</td>
+						<td>GREEVER</td>
+						<td>弹力和持久性良好的有机钢铁做成的斧头。有着轻便与迅速的特征 </td>
+						<td>SL500TH100ACC10AGL0DEF0EVA0LCK</td>
+						<td>65530</td>
+						<td>32765</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="122">
+								<a href="物品图片/122.pngx">122</a>
+							</a>
+						</td>
+						<td>BAHAMUT</td>
+						<td>具有劈开传说之龙的力量的神秘战斧 </td>
+						<td>SL1290TH950ACC10AGL0DEF0EVA0LCK</td>
+						<td>995000</td>
+						<td>497500</td>
+						<td>
+							<a href="../主页.HTML#056_1">056_1</a>
+							<a href="../主页.HTML#059_1">059_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="123">
+								<a href="物品图片/123.pngx">123</a>
+							</a>
+						</td>
+						<td>HALBERD</td>
+						<td>拥有斧和枪各自特性的优秀武器 </td>
+						<td>SL105TH105ACC5AGL0DEF0EVA0LCK</td>
+						<td>4000</td>
+						<td>2000</td>
+						<td>
+							<a href="../主页.HTML#012_2">012_2</a>
+							<a href="../主页.HTML#029_1">029_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="124">
+								<a href="物品图片/124.pngx">124</a>
+							</a>
+						</td>
+						<td>POLEAXE</td>
+						<td>斧类，却带有斧枪类特征的武器 </td>
+						<td>SL850TH150ACC0AGL0DEF0EVA0LCK</td>
+						<td>65140</td>
+						<td>32570</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="125">
+								<a href="物品图片/125.pngx">125</a>
+							</a>
+						</td>
+						<td>MECH</td>
+						<td>斧枪类是用特殊的金属材料锻造而成的 </td>
+						<td>SL200TH210ACC5AGL0DEF0EVA0LCK</td>
+						<td>22000</td>
+						<td>11000</td>
+						<td>
+							<a href="../主页.HTML#029_1">029_1</a>
+							<a href="../主页.HTML#029_2">029_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="126">
+								<a href="物品图片/126.pngx">126</a>
+							</a>
+						</td>
+						<td>SAINT</td>
+						<td>受到至高之神之祝福的神圣斧枪 </td>
+						<td>SL840TH640ACC10AGL0DEF0EVA0LCK20属性-水</td>
+						<td>290000</td>
+						<td>145000</td>
+						<td>
+							<a href="../主页.HTML#054_2">054_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="127">
+								<a href="物品图片/127.pngx">127</a>
+							</a>
+						</td>
+						<td>BOW·S</td>
+						<td>仅仅由一根木头制成的短弓 </td>
+						<td>ATK8 ACC10 AGL0 DEF0 EVA0 LCK0</td>
+						<td>50</td>
+						<td>25</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="128">
+								<a href="物品图片/128.pngx">128</a>
+							</a>
+						</td>
+						<td>BOW·L</td>
+						<td>仅仅由一根木头制成的长弓 </td>
+						<td>ATK20 ACC10 AGL0 DEF0 EVA0 LCK0</td>
+						<td>200</td>
+						<td>100</td>
+						<td></td>
+						<td>
+							<a href="../主页.HTML#151">151</a>
+							<a href="../主页.HTML#012">012</a>
+							<a href="../主页.HTML#209">209</a><br />
+							<a href="../主页.HTML#145">145</a>
+							<a href="../主页.HTML#095">095</a>
+							<a href="../主页.HTML#090">090</a><br /></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="129">
+								<a href="物品图片/129.pngx">129</a>
+							</a>
+						</td>
+						<td>COMPOSIT</td>
+						<td>由两根以上的木材制成的弓被称作合成弓 </td>
+						<td>ATK400 ACC20 AGL0 DEF0 EVA0 LCK0</td>
+						<td>3000</td>
+						<td>1500</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="130">
+								<a href="物品图片/130.pngx">130</a>
+							</a>
+						</td>
+						<td>KLEIN</td>
+						<td>强大的弓精确度不高、很重 </td>
+						<td>ATK545 ACC35 AGL0 DEF0 EVA0 LCK0</td>
+						<td>7000</td>
+						<td>3500</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="131">
+								<a href="物品图片/131.pngx">131</a>
+							</a>
+						</td>
+						<td>AQUA</td>
+						<td>具有神秘的流水魔力的弓火属性魔物的克星 </td>
+						<td>ATK680 ACC50 AGL0 DEF0 EVA0 LCK0属性-水</td>
+						<td>140000</td>
+						<td>70000</td>
+						<td>
+							<a href="../主页.HTML#051_2">051_2</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#004">004</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="132">
+								<a href="物品图片/132.pngx">132</a>
+							</a>
+						</td>
+						<td>FLARE</td>
+						<td>具有神秘的火炎魔力的弓水属性魔物的克星 </td>
+						<td>ATK680 ACC50 AGL0 DEF0 EVA0 LCK0属性-火</td>
+						<td>107200</td>
+						<td>53600</td>
+						<td></td>
+						<td>
+							<a href="../主页.HTML#021">021</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="133">
+								<a href="物品图片/133.pngx">133</a>
+							</a>
+						</td>
+						<td>EARTH</td>
+						<td>具有神秘的大地魔力的弓风属性魔物的克星 </td>
+						<td>ATK680 ACC50 AGL0 DEF0 EVA0 LCK0属性-地</td>
+						<td>107200</td>
+						<td>53600</td>
+						<td></td>
+						<td>
+							<a href="../主页.HTML#209">209</a>
+							<a href="../主页.HTML#090">090</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="134">
+								<a href="物品图片/134.pngx">134</a>
+							</a>
+						</td>
+						<td>GALE</td>
+						<td>具有神秘的狂风魔力的弓地属性魔物的克星 </td>
+						<td>ATK680 ACC50 AGL0 DEF0 EVA0 LCK0属性-风</td>
+						<td>107200</td>
+						<td>53600</td>
+						<td>
+							<a href="../主页.HTML#038_2">038_2</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#009">009</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="135">
+								<a href="物品图片/135.pngx">135</a>
+							</a>
+						</td>
+						<td>CRESENT</td>
+						<td>被称为光之弓的弓。放出的箭就像一束光一样飞出 </td>
+						<td>ATK750 ACC65 AGL0 DEF0 EVA0 LCK0属性-光</td>
+						<td>148000</td>
+						<td>74000</td>
+						<td></td>
+						<td>
+							<a href="../主页.HTML#095">095</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="136">
+								<a href="物品图片/136.pngx">136</a>
+							</a>
+						</td>
+						<td>ELVENBOW</td>
+						<td>精灵族流传的圣弓绝对不会射到目标以外 </td>
+						<td>ATK808 ACC200 AGL0 DEF0 EVA0 LCK0</td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="137">
+								<a href="物品图片/137.pngx">137</a>
+							</a>
+						</td>
+						<td>MERCILES</td>
+						<td>没有同情心的威力，似乎能够射穿任何的钢铁。传说中的弓 </td>
+						<td>ATK999 ACC80 AGL0 DEF0 EVA0 LCK0</td>
+						<td>70000</td>
+						<td>35000</td>
+						<td></td>
+						<td>
+							<a href="../主页.HTML#034">034</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="138">
+								<a href="物品图片/138.pngx">138</a>
+							</a>
+						</td>
+						<td>BERSRKER</td>
+						<td>在传说中不为人知的大陆将狂战士击败时被使用的钢弓 </td>
+						<td>ATK1042 ACC100 AGL0 DEF0 EVA0 LCK0</td>
+						<td>120000</td>
+						<td>60000</td>
+						<td>
+							<a href="../主页.HTML#056_1">056_1</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#145">145</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="139">
+								<a href="物品图片/139.pngx">139</a>
+							</a>
+						</td>
+						<td>BOW.2</td>
+						<td>再度强化锻造过的精灵族流传的圣弓。绝对不会射到目标以外 </td>
+						<td>ATK1180 ACC200 AGL0 DEF0 EVA0 LCK0</td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="140">
+								<a href="物品图片/140.pngx">140</a>
+							</a>
+						</td>
+						<td>ROD</td>
+						<td>以金钱锻制的权杖 </td>
+						<td>ATK2 ACC10 AGL0 DEF0 EVA0 LCK0</td>
+						<td>10</td>
+						<td>5</td>
+						<td></td>
+						<td>
+							<a href="../主页.HTML#103">103</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="141">
+								<a href="物品图片/141.pngx">141</a>
+							</a>
+						</td>
+						<td>GEMROD</td>
+						<td>顶端用高贵的宝石作为装饰的权杖 </td>
+						<td>ATK15 ACC10 AGL0 DEF0 EVA0 LCK0</td>
+						<td>600</td>
+						<td>300</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="142">
+								<a href="物品图片/142.pngx">142</a>
+							</a>
+						</td>
+						<td>RUBYWAND</td>
+						<td>顶端用红宝石装饰的权杖 </td>
+						<td>ATK30 ACC10 AGL0 DEF0 EVA0 LCK0</td>
+						<td>1240</td>
+						<td>620</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="143">
+								<a href="物品图片/143.pngx">143</a>
+							</a>
+						</td>
+						<td>STAFF</td>
+						<td>表面刻满了将魔力实体化的文字，价格很高的权杖 </td>
+						<td>ATK85 ACC10 AGL0 DEF0 EVA0 LCK0</td>
+						<td>3000</td>
+						<td>1500</td>
+						<td>
+							<a href="../主页.HTML#019_2">019_2</a>
+							<a href="../主页.HTML#030_2">030_2</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#103">103</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="144">
+								<a href="物品图片/144.pngx">144</a>
+							</a>
+						</td>
+						<td>UNICORN</td>
+						<td>独角圣兽的角可以引引导出强大的法术 </td>
+						<td>ATK135 ACC10 AGL0 DEF10 EVA0 LCK0属性-光</td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="145">
+								<a href="物品图片/145.pngx">145</a>
+							</a>
+						</td>
+						<td>STAFF</td>
+						<td>受到至高之神之祝福的神圣权杖 </td>
+						<td>ATK180 ACC10 AGL0 DEF0 EVA0 LCK0 属性-</td>
+						<td>6000</td>
+						<td>3000</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="146">
+								<a href="物品图片/146.pngx">146</a>
+							</a>
+						</td>
+						<td>MACE</td>
+						<td>挥起来像星星一样闪耀着美丽的轨迹的魔法权杖 </td>
+						<td>ATK330 ACC10 AGL0 DEF0 EVA0 LCK0</td>
+						<td>42000</td>
+						<td>21000</td>
+						<td>
+							<a href="../主页.HTML#044_2">044_2</a>
+							<a href="../主页.HTML#053_1">053_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="147">
+								<a href="物品图片/147.pngx">147</a>
+							</a>
+						</td>
+						<td>BC</td>
+						<td>正宗的蓝色水晶权杖，在伊修塔尔传说中出现过的圣器 </td>
+						<td>ATK420 ACC10 AGL0 DEF0 EVA0 LCK0</td>
+						<td>200000</td>
+						<td>100000</td>
+						<td>
+							<a href="../主页.HTML#049_2">049_2</a>
+							<a href="../主页.HTML#056_1">056_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="148">
+								<a href="物品图片/148.pngx">148</a>
+							</a>
+						</td>
+						<td>MAGAZINE</td>
+						<td>成年男子的读物很薄、攻击力很低 </td>
+						<td>ATK5 ACC20 AGL0 DEF0 EVA0 LCK0</td>
+						<td>1800</td>
+						<td>900</td>
+						<td>
+							<a href="../主页.HTML#012_1">012_1</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#129">129</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="149">
+								<a href="物品图片/149.pngx">149</a>
+							</a>
+						</td>
+						<td>N·G</td>
+						<td>有像黄色豆子一样的人物画在封面的书。NO GOOD的缩写 </td>
+						<td>ATK765 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>15300</td>
+						<td>7650</td>
+						<td>
+							<a href="../主页.HTML#054_2">054_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="150">
+								<a href="物品图片/150.pngx">150</a>
+							</a>
+						</td>
+						<td>COMMON</td>
+						<td>魔法书的一种有着死者之书·禁断之书的称号 </td>
+						<td>ATK20 ACC10 AGL0 DEF0 EVA0 LCK0属性-暗</td>
+						<td>1000</td>
+						<td>500</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="151">
+								<a href="物品图片/151.pngx">151</a>
+							</a>
+						</td>
+						<td>AMBER</td>
+						<td>魔法书的一种。深红的装订 </td>
+						<td>ATK60 ACC20 AGL0 DEF0 EVA0 LCK0</td>
+						<td>8000</td>
+						<td>4000</td>
+						<td></td>
+						<td>
+							<a href="../主页.HTML#112">112</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="152">
+								<a href="物品图片/152.pngx">152</a>
+							</a>
+						</td>
+						<td>SERANO</td>
+						<td>魔法书的一种。被封印在图书馆地下室的禁断的书物 </td>
+						<td>ATK70 ACC30 AGL0 DEF0 EVA0 LCK0</td>
+						<td>12000</td>
+						<td>6000</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="153">
+								<a href="物品图片/153.pngx">153</a>
+							</a>
+						</td>
+						<td>LAVOR</td>
+						<td>魔法书的一种。有一部分字迹是用血液写成的书籍 </td>
+						<td>ATK80 ACC10 AGL0 DEF0 EVA0 LCK0属性-暗</td>
+						<td>12000</td>
+						<td>6000</td>
+						<td>
+							<a href="../主页.HTML#012_2">012_2</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#031">031</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="154">
+								<a href="物品图片/154.pngx">154</a>
+							</a>
+						</td>
+						<td>DINGUEN</td>
+						<td>魔法书的一种。用不为人知的动物毛皮装订而成的书籍 </td>
+						<td>ATK120 ACC10 AGL0 DEF0 EVA0 LCK0属性-水</td>
+						<td>4000</td>
+						<td>2000</td>
+						<td>
+							<a href="../主页.HTML#024_1">024_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="155">
+								<a href="物品图片/155.pngx">155</a>
+							</a>
+						</td>
+						<td>FRAGMENT</td>
+						<td>魔法书的一种。大陆北部的遗迹被发现的以金属作为封面的书 </td>
+						<td>ATK350 ACC10 AGL0 DEF0 EVA0 LCK0</td>
+						<td>8000</td>
+						<td>4000</td>
+						<td>
+							<a href="../主页.HTML#036_1">036_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="156">
+								<a href="物品图片/156.pngx">156</a>
+							</a>
+						</td>
+						<td>SUNS</td>
+						<td>魔法书的一种。大陆东方的幻想的伟大人物所用过的书籍 </td>
+						<td>ATK500 ACC10 AGL0 DEF0 EVA0 LCK0</td>
+						<td>128000</td>
+						<td>64000</td>
+						<td>
+							<a href="../主页.HTML#049_1">049_1</a>
+							<a href="../主页.HTML#056_1">056_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="157">
+								<a href="物品图片/157.pngx">157</a>
+							</a>
+						</td>
+						<td>REQUIEM</td>
+						<td>魔法书的一种。以剧本的形式记载着野鸭子的咒文的古老魔法书 </td>
+						<td>ATK500 ACC60 AGL0 DEF0 EVA0 LCK0</td>
+						<td>128000</td>
+						<td>64000</td>
+						<td>
+							<a href="../主页.HTML#037_2">037_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="158">
+								<a href="物品图片/158.pngx">158</a>
+							</a>
+						</td>
+						<td>MAGIC</td>
+						<td>魔法书的一种。以魔法的真理为名的究极魔法书 </td>
+						<td>ATK700 ACC50 AGL0 DEF0 EVA0 LCK0属性-光</td>
+						<td>300000</td>
+						<td>150000</td>
+						<td>
+							<a href="../主页.HTML#044_2">044_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="159">
+								<a href="物品图片/159.pngx">159</a>
+							</a>
+						</td>
+						<td>BROOM</td>
+						<td>可以在天空中飞行的扫帚。用来打人会很疼 </td>
+						<td>ATK20 ACC10 AGL0 DEF0 EVA0 LCK0</td>
+						<td>230</td>
+						<td>115</td>
+						<td>
+							<a href="../主页.HTML#058_2">058_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="160">
+								<a href="物品图片/160.pngx">160</a>
+							</a>
+						</td>
+						<td>MYSTIC</td>
+						<td>以银为原材料细心制造出的扫帚 </td>
+						<td>ATK100 ACC10 AGL0 DEF0 EVA0 LCK0</td>
+						<td>5600</td>
+						<td>2800</td>
+						<td>
+							<a href="../主页.HTML#018_2">018_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="161">
+								<a href="物品图片/161.pngx">161</a>
+							</a>
+						</td>
+						<td>MAGIC</td>
+						<td>从异世界来的魔女所乘坐的扫帚 </td>
+						<td>ATK200 ACC10 AGL0 DEF0 EVA0 LCK0</td>
+						<td>18000</td>
+						<td>9000</td>
+						<td>
+							<a href="../主页.HTML#056_1">056_1</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#024">024</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="162">
+								<a href="物品图片/162.pngx">162</a>
+							</a>
+						</td>
+						<td>SYLPH</td>
+						<td>寄宿着风之精灵的力量的扫帚 </td>
+						<td>ATK380 ACC10 AGL0 DEF0 EVA0 LCK0属性-风</td>
+						<td>5600</td>
+						<td>2800</td>
+						<td>
+							<a href="../主页.HTML#036_2">036_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="163">
+								<a href="物品图片/163.pngx">163</a>
+							</a>
+						</td>
+						<td>WONDER</td>
+						<td>飞行的时候会像乐器一样发出声音的扫帚 </td>
+						<td>ATK500 ACC30 AGL0 DEF0 EVA0 LCK0</td>
+						<td>12000</td>
+						<td>6000</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="164">
+								<a href="物品图片/164.pngx">164</a>
+							</a>
+						</td>
+						<td>STAR</td>
+						<td>流星轨迹的魔法扫帚 </td>
+						<td>ATK640 ACC10 AGL0 DEF0 EVA0 LCK0</td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="165">
+								<a href="物品图片/165.pngx">165</a>
+							</a>
+						</td>
+						<td>DECK</td>
+						<td>用来扫地的道具相信它能够飞起来吧！ </td>
+						<td>ATK30 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>600</td>
+						<td>300</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="166">
+								<a href="物品图片/166.pngx">166</a>
+							</a>
+						</td>
+						<td>BOTAN</td>
+						<td>暗杀者用的短剑。是女忍者小时候携带的东西 </td>
+						<td>ATK255 ACC10 AGL0 DEF0 EVA0 LCK0属性-火</td>
+						<td>4000</td>
+						<td>2000</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="167">
+								<a href="物品图片/167.pngx">167</a>
+							</a>
+						</td>
+						<td>AYAME</td>
+						<td>暗杀者用的短剑火属性魔物特效 </td>
+						<td>ATK420 ACC20 AGL0 DEF0 EVA0 LCK0属性-水</td>
+						<td>100000</td>
+						<td>50000</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="168">
+								<a href="物品图片/168.pngx">168</a>
+							</a>
+						</td>
+						<td>KIKYO</td>
+						<td>暗杀者用的短剑。刀身是青紫色风属性魔物特效 </td>
+						<td>ATK550 ACC30 AGL0 DEF0 EVA0 LCK0属性-地</td>
+						<td>150000</td>
+						<td>75000</td>
+						<td>
+							<a href="../主页.HTML#059_2">059_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="169">
+								<a href="物品图片/169.pngx">169</a>
+							</a>
+						</td>
+						<td>KUROYURI</td>
+						<td>暗杀者用的短剑只有极少数的人能够使用它 </td>
+						<td>ATK750 ACC40 AGL0 DEF0 EVA0 LCK0属性-暗</td>
+						<td>180000</td>
+						<td>90000</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="170">
+								<a href="物品图片/170.pngx">170</a>
+							</a>
+						</td>
+						<td>NINJA</td>
+						<td>暗杀者用的短剑被称作散落的血之樱花 </td>
+						<td>ATK999 ACC50 AGL0 DEF0 EVA0 LCK0属性-暗</td>
+						<td>240000</td>
+						<td>120000</td>
+						<td>
+							<a href="../主页.HTML#060_2">060_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="171">
+								<a href="物品图片/171.pngx">171</a>
+							</a>
+						</td>
+						<td>LEATHER</td>
+						<td>皮制的半身铠甲 </td>
+						<td>ATK0 ACC0 AGL0 DEF2 EVA0 LCK0</td>
+						<td>120</td>
+						<td>60</td>
+						<td>
+							<a href="../主页.HTML#059_1">059_1</a>
+							<a href="../主页.HTML#059_2">059_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="172">
+								<a href="物品图片/172.pngx">172</a>
+							</a>
+						</td>
+						<td>CHAIN</td>
+						<td>用宽度为1~2厘米的金属制作的上半身铁甲 </td>
+						<td>ATK0 ACC0 AGL0 DEF4 EVA0 LCK0</td>
+						<td>900</td>
+						<td>450</td>
+						<td>
+							<a href="../主页.HTML#007_1">007_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="173">
+								<a href="物品图片/173.pngx">173</a>
+							</a>
+						</td>
+						<td>RING</td>
+						<td>金属轮缝在皮上制成的上半身铠 </td>
+						<td>ATK0 ACC0 AGL0 DEF7 EVA0 LCK0</td>
+						<td>1200</td>
+						<td>600</td>
+						<td>
+							<a href="../主页.HTML#007_1">007_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="174">
+								<a href="物品图片/174.pngx">174</a>
+							</a>
+						</td>
+						<td>SPLINT</td>
+						<td>在锁子甲的胸部加上方形金属板强化防御的上半身铠 </td>
+						<td>ATK0 ACC0 AGL0 DEF9 EVA0 LCK0</td>
+						<td>1900</td>
+						<td>950</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="175">
+								<a href="物品图片/175.pngx">175</a>
+							</a>
+						</td>
+						<td>BREAST</td>
+						<td>上半身被金属板覆盖的铠甲 </td>
+						<td>ATK0 ACC0 AGL0 DEF13 EVA0 LCK0</td>
+						<td>3600</td>
+						<td>1800</td>
+						<td>
+							<a href="../主页.HTML#012_2">012_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="176">
+								<a href="物品图片/176.pngx">176</a>
+							</a>
+						</td>
+						<td>PLATE</td>
+						<td>全身被金属板覆盖的铠甲 </td>
+						<td>ATK0 ACC0 AGL0 DEF18 EVA0 LCK0</td>
+						<td>24500</td>
+						<td>12250</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="177">
+								<a href="物品图片/177.pngx">177</a>
+							</a>
+						</td>
+						<td>MYTHRIL</td>
+						<td>具有神秘魔力的金属米斯里鲁和银质材料制成的金属板装甲 </td>
+						<td>ATK0 ACC0 AGL0 DEF28 EVA0 LCK0属性-光50</td>
+						<td>50000</td>
+						<td>25000</td>
+						<td></td>
+						<td>
+							<a href="../主页.HTML#192">192</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="178">
+								<a href="物品图片/178.pngx">178</a>
+							</a>
+						</td>
+						<td>REFLECT</td>
+						<td>被冠有反射之名的魔法铠甲 </td>
+						<td>ATK0 ACC0 AGL0 DEF35 EVA0 LCK0属性-水20风20雷20光50</td>
+						<td>200000</td>
+						<td>100000</td>
+						<td>
+							<a href="../主页.HTML#039_1">039_1</a>
+							<a href="../主页.HTML#060_1">060_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="179">
+								<a href="物品图片/179.pngx">179</a>
+							</a>
+						</td>
+						<td>SILVER</td>
+						<td>用银制成的金属板装甲 </td>
+						<td>ATK0 ACC0 AGL0 DEF37 EVA0 LCK0</td>
+						<td>40000</td>
+						<td>20000</td>
+						<td>
+							<a href="../主页.HTML#037_2">037_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="180">
+								<a href="物品图片/180.pngx">180</a>
+							</a>
+						</td>
+						<td>RARE</td>
+						<td>名工匠墓斯制作的杰作 </td>
+						<td>ATK0 ACC0 AGL0 DEF38 EVA0 LCK0</td>
+						<td>82000</td>
+						<td>41000</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="181">
+								<a href="物品图片/181.pngx">181</a>
+							</a>
+						</td>
+						<td>MUMBANE</td>
+						<td>受到伟大的大地母神守护的铠甲 </td>
+						<td>ATK0 ACC0 AGL0 DEF60 EVA0 LCK0属性-无30水30火30雷70光70</td>
+						<td>400000</td>
+						<td>200000</td>
+						<td>
+							<a href="../主页.HTML#044_1">044_1</a>
+							<a href="../主页.HTML#046_1">046_1</a>
+							<a href="../主页.HTML#055_2">055_2</a><br /></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="182">
+								<a href="物品图片/182.pngx">182</a>
+							</a>
+						</td>
+						<td>ARMOR</td>
+						<td>黄金铠甲。伊修塔尔传说中勇者墓尔加美斯所拥有的道具 </td>
+						<td>ATK0 ACC0 AGL0 DEF65 EVA0 LCK0属性-无80火30风50雷80</td>
+						<td>700000</td>
+						<td>350000</td>
+						<td>
+							<a href="../主页.HTML#059_2">059_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="183">
+								<a href="物品图片/183.pngx">183</a>
+							</a>
+						</td>
+						<td>CLOAK</td>
+						<td>用普通布料织成的衣服 </td>
+						<td>ATK0 ACC0 AGL0 DEF3 EVA0 LCK0</td>
+						<td>12</td>
+						<td>6</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="184">
+								<a href="物品图片/184.pngx">184</a>
+							</a>
+						</td>
+						<td>AMBER</td>
+						<td>装饰的布制依服 </td>
+						<td>ATK0 ACC0 AGL0 DEF6 EVA5 LCK0</td>
+						<td>620</td>
+						<td>310</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="185">
+								<a href="物品图片/185.pngx">185</a>
+							</a>
+						</td>
+						<td>AILVER</td>
+						<td>用银丝编织成的衣服 </td>
+						<td>ATK0 ACC0 AGL0 DEF12 EVA10 LCK0</td>
+						<td>2500</td>
+						<td>1250</td>
+						<td>
+							<a href="../主页.HTML#012_2">012_2</a>
+							<a href="../主页.HTML#030_1">030_1</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#159">159</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="186">
+								<a href="物品图片/186.pngx">186</a>
+							</a>
+						</td>
+						<td>HOLY</td>
+						<td>受到至高神的祝福的圣衣 </td>
+						<td>ATK0 ACC0 AGL0 DEF25 EVA0 LCK0属性-雷50</td>
+						<td>56000</td>
+						<td>28000</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="187">
+								<a href="物品图片/187.pngx">187</a>
+							</a>
+						</td>
+						<td>STAR</td>
+						<td>有时会放射出星星般光芒的充满魔力的衣服 </td>
+						<td>ATK0 ACC0 AGL0 DEF55 EVA0 LCK0属性-无50水50</td>
+						<td>900000</td>
+						<td>450000</td>
+						<td>
+							<a href="../主页.HTML#036_2">036_2</a>
+							<a href="../主页.HTML#037_1">037_1</a>
+							<a href="../主页.HTML#039_1">039_1</a><br />
+							<a href="../主页.HTML#040_1">040_1</a>
+							<a href="../主页.HTML#044_1">044_1</a>
+							<a href="../主页.HTML#055_1">055_1</a><br /></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="188">
+								<a href="物品图片/188.pngx">188</a>
+							</a>
+						</td>
+						<td>MYTHRIL</td>
+						<td>用丝状的、拥有神秘魔力的金属米斯里鲁编织的衣服 </td>
+						<td>ATK0 ACC0 AGL0 DEF18 EVA0 LCK0属性-光50%（无效化）</td>
+						<td>30000</td>
+						<td>15000</td>
+						<td>
+							<a href="../主页.HTML#019_2">019_2</a>
+							<a href="../主页.HTML#060_1">060_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="189">
+								<a href="物品图片/189.pngx">189</a>
+							</a>
+						</td>
+						<td>BLACK</td>
+						<td>魔女之间流行的服装黑色的基调完全引发出女性的魅力 </td>
+						<td>ATK0 ACC0 AGL0 DEF50 EVA15 LCK0属性-地30水30火30风30雷30</td>
+						<td>100000</td>
+						<td>50000</td>
+						<td></td>
+						<td>
+							<a href="../主页.HTML#024">024</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="190">
+								<a href="物品图片/190.pngx">190</a>
+							</a>
+						</td>
+						<td>KISARAGI</td>
+						<td>暗杀者用的装着行动起来轻便 </td>
+						<td>ATK0 ACC0 AGL0 DEF25 EVA5 LCK0</td>
+						<td>22500</td>
+						<td>11250</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="191">
+								<a href="物品图片/191.pngx">191</a>
+							</a>
+						</td>
+						<td>YAYOI</td>
+						<td>暗杀者用的装着。由高人将其防御力强化 </td>
+						<td>ATK0 ACC0 AGL0 DEF35 EVA5 LCK0</td>
+						<td>125000</td>
+						<td>62500</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="192">
+								<a href="物品图片/192.pngx">192</a>
+							</a>
+						</td>
+						<td>NAGAZUKI</td>
+						<td>女忍的装着。在衬布里缝着守护之印 </td>
+						<td>ATK0 ACC0 AGL0 DEF45 EVA5 LCK0</td>
+						<td>160000</td>
+						<td>80000</td>
+						<td>
+							<a href="../主页.HTML#049_2">049_2</a>
+							<a href="../主页.HTML#056_1">056_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="193">
+								<a href="物品图片/193.pngx">193</a>
+							</a>
+						</td>
+						<td>KANAZUKI</td>
+						<td>暗杀者用的装着。装备中受到风属性攻击则体力回复 </td>
+						<td>ATK0 ACC0 AGL0 DEF60 EVA10 LCK0属性-风10%（回复）</td>
+						<td>240000</td>
+						<td>120000</td>
+						<td>
+							<a href="../主页.HTML#059_2">059_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="194">
+								<a href="物品图片/194.pngx">194</a>
+							</a>
+						</td>
+						<td>SHIELD</td>
+						<td>木制盾牌 </td>
+						<td>ATK0 ACC0 AGL0 DEF1 EVA2 LCK0</td>
+						<td>50</td>
+						<td>25</td>
+						<td>
+							<a href="../主页.HTML#004_1">004_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="195">
+								<a href="物品图片/195.pngx">195</a>
+							</a>
+						</td>
+						<td>ROUND·S</td>
+						<td>圆形的金属盾牌 </td>
+						<td>ATK0 ACC0 AGL0 DEF2 EVA5 LCK0</td>
+						<td>300</td>
+						<td>150</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="196">
+								<a href="物品图片/196.pngx">196</a>
+							</a>
+						</td>
+						<td>KITE·S</td>
+						<td>正方形金属盾牌。比圆盾更坚固更便于使用 </td>
+						<td>ATK0 ACC0 AGL0 DEF4 EVA7 LCK0</td>
+						<td>600</td>
+						<td>300</td>
+						<td>
+							<a href="../主页.HTML#010_1">010_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="197">
+								<a href="物品图片/197.pngx">197</a>
+							</a>
+						</td>
+						<td>LIGHT·S</td>
+						<td>剑士用的金属盾牌 </td>
+						<td>ATK0 ACC0 AGL0 DEF6 EVA10 LCK0</td>
+						<td>1150</td>
+						<td>575</td>
+						<td>
+							<a href="../主页.HTML#012_1">012_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="198">
+								<a href="物品图片/198.pngx">198</a>
+							</a>
+						</td>
+						<td>FINE·S</td>
+						<td>战士盾牌的类型。受到机能上的洗练便于使用 </td>
+						<td>ATK0 ACC0 AGL0 DEF8 EVA12 LCK0</td>
+						<td>15800</td>
+						<td>7900</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="199">
+								<a href="物品图片/199.pngx">199</a>
+							</a>
+						</td>
+						<td>OMEGA·S</td>
+						<td>中央刻有神圣法印的盾牌 </td>
+						<td>ATK0 ACC0 AGL0 DEF10 EVA15 LCK0</td>
+						<td>35000</td>
+						<td>17500</td>
+						<td>
+							<a href="../主页.HTML#038_1">038_1</a>
+							<a href="../主页.HTML#039_2">039_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="200">
+								<a href="物品图片/200.pngx">200</a>
+							</a>
+						</td>
+						<td>RARE·S</td>
+						<td>名工匠墓斯融入灵魂完成的杰作对水系攻击有抗性 </td>
+						<td>ATK0 ACC0 AGL0 DEF15 EVA20 LCK0属性-水50</td>
+						<td>48500</td>
+						<td>24250</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="201">
+								<a href="物品图片/201.pngx">201</a>
+							</a>
+						</td>
+						<td>RED·S</td>
+						<td>红色的圣盾。具有让人激起斗志的力量 </td>
+						<td>ATK0 ACC0 AGL0 DEF15 EVA30 LCK0</td>
+						<td>400000</td>
+						<td>200000</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="202">
+								<a href="物品图片/202.pngx">202</a>
+							</a>
+						</td>
+						<td>STAR·S</td>
+						<td>利用未知的金属做成的盾牌防御力高、轻捷 </td>
+						<td>ATK0 ACC0 AGL0 DEF23 EVA25 LCK0</td>
+						<td>60000</td>
+						<td>30000</td>
+						<td>
+							<a href="../主页.HTML#043_2">043_2</a>
+							<a href="../主页.HTML#054_1">054_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="203">
+								<a href="物品图片/203.pngx">203</a>
+							</a>
+						</td>
+						<td>BLUE·S</td>
+						<td>蓝色的圣盾。具有让人激起勇气的力量 </td>
+						<td>ATK0 ACC0 AGL0 DEF25 EVA30 LCK0</td>
+						<td>400000</td>
+						<td>200000</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="204">
+								<a href="物品图片/204.pngx">204</a>
+							</a>
+						</td>
+						<td>SHIELD·R</td>
+						<td>形状像指轮、有半透明的魔法盾牌若隐若现 </td>
+						<td>ATK0 ACC0 AGL0 DEF20 EVA25 LCK0</td>
+						<td>300000</td>
+						<td>150000</td>
+						<td>
+							<a href="../主页.HTML#036_1">036_1</a>
+							<a href="../主页.HTML#037_2">037_2</a>
+							<a href="../主页.HTML#039_2">039_2</a><br />
+							<a href="../主页.HTML#040_2">040_2</a>
+							<a href="../主页.HTML#054_1">054_1</a>
+							<a href="../主页.HTML#055_1">055_1</a><br /></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="205">
+								<a href="物品图片/205.pngx">205</a>
+							</a>
+						</td>
+						<td>LEATHER</td>
+						<td>皮制头盔。覆盖住头顶的类型 </td>
+						<td>ATK0 ACC0 AGL0 DEF1 EVA0 LCK0</td>
+						<td>600</td>
+						<td>300</td>
+						<td>
+							<a href="../主页.HTML#060_1">060_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="206">
+								<a href="物品图片/206.pngx">206</a>
+							</a>
+						</td>
+						<td>IRON·H</td>
+						<td>铁制头盔露出下半边脸的类型 </td>
+						<td>ATK0 ACC0 AGL0 DEF3 EVA0 LCK0</td>
+						<td>840</td>
+						<td>420</td>
+						<td>
+							<a href="../主页.HTML#058_2">058_2</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#001">001</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="207">
+								<a href="物品图片/207.pngx">207</a>
+							</a>
+						</td>
+						<td>ARET·H</td>
+						<td>头部和脸全被覆盖的铁制头盔 </td>
+						<td>ATK0 ACC0 AGL0 DEF5 EVA0 LCK0</td>
+						<td>1320</td>
+						<td>660</td>
+						<td>
+							<a href="../主页.HTML#012_2">012_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="208">
+								<a href="物品图片/208.pngx">208</a>
+							</a>
+						</td>
+						<td>CROSS·H</td>
+						<td>全遮盖式的头盔。受到机能上的洗练 </td>
+						<td>ATK0 ACC0 AGL0 DEF10 EVA0 LCK0</td>
+						<td>5000</td>
+						<td>2500</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="209">
+								<a href="物品图片/209.pngx">209</a>
+							</a>
+						</td>
+						<td>DUEL·H</td>
+						<td>授子古代王国被歌颂的英勇战士的头盔 </td>
+						<td>ATK0 ACC0 AGL0 DEF19 EVA0 LCK0</td>
+						<td>40000</td>
+						<td>20000</td>
+						<td>
+							<a href="../主页.HTML#037_1">037_1</a>
+							<a href="../主页.HTML#039_2">039_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="210">
+								<a href="物品图片/210.pngx">210</a>
+							</a>
+						</td>
+						<td>RARE·H</td>
+						<td>名工匠墓斯融入灵魂完成的杰作对雷系攻击有抗性 </td>
+						<td>ATK0 ACC0 AGL0 DEF20 EVA0 LCK0属性-雷20</td>
+						<td>31000</td>
+						<td>15500</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="211">
+								<a href="物品图片/211.pngx">211</a>
+							</a>
+						</td>
+						<td>GOLDEN·H</td>
+						<td>黄金头盔。伊修塔尔传说中勇者墓尔加美斯所拥有的道具 </td>
+						<td>ATK0 ACC0 AGL0 DEF28 EVA5 LCK0</td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="212">
+								<a href="物品图片/212.pngx">212</a>
+							</a>
+						</td>
+						<td>STAR·H</td>
+						<td>用未知金属做成的头盔防御力高、轻捷 </td>
+						<td>ATK0 ACC0 AGL0 DEF26 EVA0 LCK0</td>
+						<td>80000</td>
+						<td>40000</td>
+						<td>
+							<a href="../主页.HTML#045_1">045_1</a>
+							<a href="../主页.HTML#055_2">055_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="213">
+								<a href="物品图片/213.pngx">213</a>
+							</a>
+						</td>
+						<td>BERET</td>
+						<td>用于驱赛避暑的帽子也有整顿身心的意思 </td>
+						<td>ATK0 ACC0 AGL0 DEF1 EVA0 LCK0</td>
+						<td>300</td>
+						<td>150</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="214">
+								<a href="物品图片/214.pngx">214</a>
+							</a>
+						</td>
+						<td>CLERIC</td>
+						<td>神职者喜欢戴的帽子 </td>
+						<td>ATK0 ACC0 AGL0 DEF3 EVA0 LCK0</td>
+						<td>800</td>
+						<td>400</td>
+						<td>
+							<a href="../主页.HTML#010_1">010_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="215">
+								<a href="物品图片/215.pngx">215</a>
+							</a>
+						</td>
+						<td>STRAW</td>
+						<td>圆形贝雷帽。要注意别被风吹落至山谷之中 </td>
+						<td>ATK0 ACC0 AGL0 DEF5 EVA0 LCK0</td>
+						<td>1420</td>
+						<td>710</td>
+						<td>
+							<a href="../主页.HTML#012_2">012_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="216">
+								<a href="物品图片/216.pngx">216</a>
+							</a>
+						</td>
+						<td>POINTED</td>
+						<td>制作精良的帽子。在工匠之间也受到了很高的评价 </td>
+						<td>ATK0 ACC0 AGL0 DEF12 EVA0 LCK0</td>
+						<td>3600</td>
+						<td>1800</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="217">
+								<a href="物品图片/217.pngx">217</a>
+							</a>
+						</td>
+						<td>STARCAP</td>
+						<td>时而放出星星般光芒的魔法的帽子 </td>
+						<td>ATK0 ACC0 AGL0 DEF16 EVA0 LCK0</td>
+						<td>80000</td>
+						<td>40000</td>
+						<td>
+							<a href="../主页.HTML#038_1">038_1</a>
+							<a href="../主页.HTML#040_2">040_2</a>
+							<a href="../主页.HTML#044_2">044_2</a><br />
+							<a href="../主页.HTML#055_1">055_1</a>
+							<a href="../主页.HTML#060_1">060_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="218">
+								<a href="物品图片/218.pngx">218</a>
+							</a>
+						</td>
+						<td>HOOD</td>
+						<td>覆盖头部的布。不重视防御力而以注重较高的回避力为主要目的 </td>
+						<td>ATK0 ACC0 AGL0 DEF2 EVA2 LCK0</td>
+						<td>2400</td>
+						<td>1200</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="219">
+								<a href="物品图片/219.pngx">219</a>
+							</a>
+						</td>
+						<td>MASK</td>
+						<td>覆盖头部的布。不重视防御力而以注重较高的回避力为主要目的 </td>
+						<td>ATK0 ACC0 AGL0 DEF5 EVA5 LCK0</td>
+						<td>15000</td>
+						<td>7500</td>
+						<td>
+							<a href="../主页.HTML#049_1">049_1</a>
+							<a href="../主页.HTML#056_1">056_1</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#087">087</a>
+							<a href="../主页.HTML#084">084</a>
+							<a href="../主页.HTML#072">072</a><br />
+							<a href="../主页.HTML#069">069</a>
+							<a href="../主页.HTML#065">065</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="220">
+								<a href="物品图片/220.pngx">220</a>
+							</a>
+						</td>
+						<td>BLUERIBB</td>
+						<td>蓝色的缎带是朋友莉雅留下的 </td>
+						<td>ATK0 ACC0 AGL0 DEF2 EVA0 LCK0</td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="221">
+								<a href="物品图片/221.pngx">221</a>
+							</a>
+						</td>
+						<td>L·RIBBON</td>
+						<td>长长的蓝色缎带被风吹起的样子美极了 </td>
+						<td>ATK0 ACC0 AGL0 DEF5 EVA0 LCK0</td>
+						<td>840</td>
+						<td>420</td>
+						<td>
+							<a href="../主页.HTML#015_1">015_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="222">
+								<a href="物品图片/222.pngx">222</a>
+							</a>
+						</td>
+						<td>STRIPED</td>
+						<td>条纹缎带 </td>
+						<td>ATK0 ACC0 AGL0 DEF9 EVA5 LCK0</td>
+						<td>4000</td>
+						<td>2000</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="223">
+								<a href="物品图片/223.pngx">223</a>
+							</a>
+						</td>
+						<td>RIBBON</td>
+						<td>非常可爱的缎带 </td>
+						<td>ATK0 ACC0 AGL0 DEF18 EVA10 LCK0</td>
+						<td>7500</td>
+						<td>3750</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="224">
+								<a href="物品图片/224.pngx">224</a>
+							</a>
+						</td>
+						<td>MAGICAL</td>
+						<td>被冠入了强大魔力的缎带 </td>
+						<td>ATK0 ACC0 AGL0 DEF25 EVA0 LCK0</td>
+						<td>200000</td>
+						<td>100000</td>
+						<td>
+							<a href="../主页.HTML#056_1">056_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="225">
+								<a href="物品图片/225.pngx">225</a>
+							</a>
+						</td>
+						<td>LEATHER</td>
+						<td>皮制的手套 </td>
+						<td>ATK0 ACC0 AGL0 DEF1 EVA0 LCK0</td>
+						<td>150</td>
+						<td>75</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="226">
+								<a href="物品图片/226.pngx">226</a>
+							</a>
+						</td>
+						<td>IRONGLO</td>
+						<td>铁制的手套 </td>
+						<td>ATK0 ACC0 AGL0 DEF2 EVA0 LCK0</td>
+						<td>600</td>
+						<td>300</td>
+						<td>
+							<a href="../主页.HTML#058_2">058_2</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#001">001</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="227">
+								<a href="物品图片/227.pngx">227</a>
+							</a>
+						</td>
+						<td>GAUNTLET</td>
+						<td>铁制的手甲 </td>
+						<td>ATK0 ACC0 AGL0 DEF4 EVA0 LCK0</td>
+						<td>1200</td>
+						<td>600</td>
+						<td>
+							<a href="../主页.HTML#012_2">012_2</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#172">172</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="228">
+								<a href="物品图片/228.pngx">228</a>
+							</a>
+						</td>
+						<td>MYTHRIL</td>
+						<td>用稀有金属制成的手甲 </td>
+						<td>ATK0 ACC0 AGL0 DEF10 EVA0 LCK0</td>
+						<td>30000</td>
+						<td>15000</td>
+						<td></td>
+						<td>
+							<a href="../主页.HTML#192">192</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="229">
+								<a href="物品图片/229.pngx">229</a>
+							</a>
+						</td>
+						<td>GAUNTLET</td>
+						<td>名工匠墓斯融入灵魂完成的杰作对地属性攻击有抗性 </td>
+						<td>ATK0 ACC0 AGL0 DEF15 EVA0 LCK0属性-地</td>
+						<td>59400</td>
+						<td>29700</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="230">
+								<a href="物品图片/230.pngx">230</a>
+							</a>
+						</td>
+						<td>GLOVES</td>
+						<td>用未知金属做成的手甲防御力高、轻捷 </td>
+						<td>ATK0 ACC0 AGL0 DEF24 EVA0 LCK0</td>
+						<td>3000</td>
+						<td>1500</td>
+						<td>
+							<a href="../主页.HTML#044_2">044_2</a>
+							<a href="../主页.HTML#054_2">054_2</a>
+							<a href="../主页.HTML#055_1">055_1</a><br /></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="231">
+								<a href="物品图片/231.pngx">231</a>
+							</a>
+						</td>
+						<td>GAUNTLET</td>
+						<td>高级的护手。装备者在挥剑的时候速度会增加，命中率会上升 </td>
+						<td>ATK0 ACC20 AGL0 DEF26 EVA0 LCK0</td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="232">
+								<a href="物品图片/232.pngx">232</a>
+							</a>
+						</td>
+						<td>IRON</td>
+						<td>铁制的带有勾爪的手甲防御力和攻击力一同上升 </td>
+						<td>ATK100 ACC0 AGL0 DEF10 EVA0 LCK0</td>
+						<td>8484</td>
+						<td>4242</td>
+						<td></td>
+						<td>
+							<a href="../主页.HTML#126">126</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="233">
+								<a href="物品图片/233.pngx">233</a>
+							</a>
+						</td>
+						<td>KITCHEN</td>
+						<td>分为拇指与其他手指两部分的手套 </td>
+						<td>ATK0 ACC0 AGL0 DEF5 EVA0 LCK0属性-火10</td>
+						<td>300</td>
+						<td>150</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="234">
+								<a href="物品图片/234.pngx">234</a>
+							</a>
+						</td>
+						<td>PRETTY</td>
+						<td>非常可爱的手套 </td>
+						<td>ATK0 ACC0 AGL0 DEF15 EVA0 LCK0属性-火20</td>
+						<td>50500</td>
+						<td>25250</td>
+						<td>
+							<a href="../主页.HTML#038_2">038_2</a>
+							<a href="../主页.HTML#040_2">040_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="235">
+								<a href="物品图片/235.pngx">235</a>
+							</a>
+						</td>
+						<td>MITTENS</td>
+						<td>母亲亲手做的手套。各种属性的伤害降低109% </td>
+						<td>ATK0 ACC0 AGL0 DEF8 EVA0 LCK0属性-地10水10火10风10雷10</td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="236">
+								<a href="物品图片/236.pngx">236</a>
+							</a>
+						</td>
+						<td>GLOVES</td>
+						<td>纯白色手套装备者的幸运上升 </td>
+						<td>ATK0 ACC0 AGL0 DEF10 EVA0 LCK50属性-水20火20光20</td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="237">
+								<a href="物品图片/237.pngx">237</a>
+							</a>
+						</td>
+						<td>STONE</td>
+						<td>可以让装备者防止石化的护符 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>46200</td>
+						<td>23100</td>
+						<td>
+							<a href="../主页.HTML#022_2">022_2</a>
+							<a href="../主页.HTML#059_2">059_2</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#196">196</a>
+							<a href="../主页.HTML#190">190</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="238">
+								<a href="物品图片/238.pngx">238</a>
+							</a>
+						</td>
+						<td>TALISMAN</td>
+						<td>装备者的防御力上升5%的护符 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>2000</td>
+						<td>1000</td>
+						<td>
+							<a href="../主页.HTML#010_2">010_2</a>
+							<a href="../主页.HTML#016_1">016_1</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#106">106</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="239">
+								<a href="物品图片/239.pngx">239</a>
+							</a>
+						</td>
+						<td>BLUETALI</td>
+						<td>装备者的防御力上升10%的护符 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>4200</td>
+						<td>2100</td>
+						<td></td>
+						<td>
+							<a href="../主页.HTML#142">142</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="240">
+								<a href="物品图片/240.pngx">240</a>
+							</a>
+						</td>
+						<td>PARALYSI</td>
+						<td>可以让装备者防止麻痹的护符 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>27200</td>
+						<td>13600</td>
+						<td></td>
+						<td>
+							<a href="../主页.HTML#190">190</a>
+							<a href="../主页.HTML#073">073</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="241">
+								<a href="物品图片/241.pngx">241</a>
+							</a>
+						</td>
+						<td>BRACELET</td>
+						<td>可以使装备者昏迷时间减半的护符 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>24300</td>
+						<td>12150</td>
+						<td>
+							<a href="../主页.HTML#021_1">021_1</a>
+							<a href="../主页.HTML#022_1">022_1</a>
+							<a href="../主页.HTML#030_1">030_1</a><br />
+							<a href="../主页.HTML#037_2">037_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="242">
+								<a href="物品图片/242.pngx">242</a>
+							</a>
+						</td>
+						<td>POISON</td>
+						<td>可以让装备者避免中毒的护符 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>6200</td>
+						<td>3100</td>
+						<td>
+							<a href="../主页.HTML#059_1">059_1</a>
+							<a href="../主页.HTML#059_2">059_2</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#214">214</a>
+							<a href="../主页.HTML#208">208</a>
+							<a href="../主页.HTML#196">196</a><br />
+							<a href="../主页.HTML#014">014</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="243">
+								<a href="物品图片/243.pngx">243</a>
+							</a>
+						</td>
+						<td>FOOT</td>
+						<td>兔子脚。有名气的护符，可以使装备者的幸运上升10% </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>200</td>
+						<td>100</td>
+						<td>
+							<a href="../主页.HTML#007_2">007_2</a>
+							<a href="../主页.HTML#025_2">025_2</a>
+							<a href="../主页.HTML#026_1">026_1</a><br /></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="244">
+								<a href="物品图片/244.pngx">244</a>
+							</a>
+						</td>
+						<td>FLARE</td>
+						<td>镶有炎之宝石的指轮水属性攻击3分减 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>200</td>
+						<td>100</td>
+						<td>
+							<a href="../主页.HTML#037_1">037_1</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#164">164</a>
+							<a href="../主页.HTML#016">016</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="245">
+								<a href="物品图片/245.pngx">245</a>
+							</a>
+						</td>
+						<td>ICECHARM</td>
+						<td>镶有冰之宝石的指轮炎属性攻击3分减 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>200</td>
+						<td>100</td>
+						<td>
+							<a href="../主页.HTML#037_1">037_1</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#167">167</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="246">
+								<a href="物品图片/246.pngx">246</a>
+							</a>
+						</td>
+						<td>MANJI</td>
+						<td>忍者之里中流传的护符可以提升命中率 </td>
+						<td>ATK0 ACC50 AGL0 DEF0 EVA0 LCK0</td>
+						<td>124000</td>
+						<td>62000</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="247">
+								<a href="物品图片/247.pngx">247</a>
+							</a>
+						</td>
+						<td>SILVER</td>
+						<td>用丝状的银制成的女性绢衣炎属性攻击30%的几率无放 </td>
+						<td>ATK0 ACC0 AGL0 DEF10 EVA0 LCK0</td>
+						<td>3030</td>
+						<td>1515</td>
+						<td>
+							<a href="../主页.HTML#025_2">025_2</a>
+							<a href="../主页.HTML#031_1">031_1</a>
+							<a href="../主页.HTML#037_2">037_2</a><br />
+							<a href="../主页.HTML#059_1">059_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="248">
+								<a href="物品图片/248.pngx">248</a>
+							</a>
+						</td>
+						<td>PRINCESS</td>
+						<td>用半透明的上等银制成的女性绢衣炎属性攻击50%的几率无效 </td>
+						<td>ATK0 ACC0 AGL0 DEF15 EVA0 LCK0</td>
+						<td>4050</td>
+						<td>2025</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="249">
+								<a href="物品图片/249.pngx">249</a>
+							</a>
+						</td>
+						<td>IRONBOOT</td>
+						<td>重靴。战斗时移动速度会变得非常缓慢 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>1040</td>
+						<td>520</td>
+						<td></td>
+						<td>
+							<a href="../主页.HTML#086">086</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="250">
+								<a href="物品图片/250.pngx">250</a>
+							</a>
+						</td>
+						<td>ELVEN</td>
+						<td>精灵族流传的靴子战斗时移动速度20%上升 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>4000</td>
+						<td>2000</td>
+						<td>
+							<a href="../主页.HTML#012_2">012_2</a>
+							<a href="../主页.HTML#022_2">022_2</a>
+							<a href="../主页.HTML#047_1">047_1</a><br />
+							<a href="../主页.HTML#050_1">050_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="251">
+								<a href="物品图片/251.pngx">251</a>
+							</a>
+						</td>
+						<td>JETBOOT</td>
+						<td>走路变快的魔法靴子战斗时移动速度50%上升。男性用 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>7100</td>
+						<td>3550</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="252">
+								<a href="物品图片/252.pngx">252</a>
+							</a>
+						</td>
+						<td>PERSIAN</td>
+						<td>猫爪形状的肉球靴全部伤害减少30% </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>5700</td>
+						<td>2850</td>
+						<td>
+							<a href="../主页.HTML#060_2">060_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="253">
+								<a href="物品图片/253.pngx">253</a>
+							</a>
+						</td>
+						<td>NIGHTMAR</td>
+						<td>以梦魔作为装饰的靴子战斗时移动速度50%上升。女性用 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>7100</td>
+						<td>3550</td>
+						<td>
+							<a href="../主页.HTML#060_2">060_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="254">
+								<a href="物品图片/254.pngx">254</a>
+							</a>
+						</td>
+						<td>WATER</td>
+						<td>可以在水面上行走的靴子水属性攻击50%的几率无放 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>8000</td>
+						<td>4000</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="255">
+								<a href="物品图片/255.pngx">255</a>
+							</a>
+						</td>
+						<td>CAPE</td>
+						<td>布制的披风。冒险者必备 </td>
+						<td>ATK0 ACC0 AGL0 DEF1 EVA0 LCK0</td>
+						<td>20</td>
+						<td>10</td>
+						<td>
+							<a href="../主页.HTML#025_2">025_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="256">
+								<a href="物品图片/256.pngx">256</a>
+							</a>
+						</td>
+						<td>LEATHER</td>
+						<td>皮制的披风。旅行的时候遇到下雨也不怕了 </td>
+						<td>ATK0 ACC0 AGL0 DEF2 EVA0 LCK0</td>
+						<td>100</td>
+						<td>50</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="257">
+								<a href="物品图片/257.pngx">257</a>
+							</a>
+						</td>
+						<td>THIEF</td>
+						<td>盗贼喜欢使用的黑色披风回避力会上升 </td>
+						<td>ATK0 ACC0 AGL0 DEF4 EVA5 LCK0</td>
+						<td>2000</td>
+						<td>1000</td>
+						<td>
+							<a href="../主页.HTML#010_1">010_1</a>
+							<a href="../主页.HTML#022_1">022_1</a>
+							<a href="../主页.HTML#022_2">022_2</a><br /></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="258">
+								<a href="物品图片/258.pngx">258</a>
+							</a>
+						</td>
+						<td>ELVCAPE</td>
+						<td>精灵族流传的草绿色披风回避力会上升 </td>
+						<td>ATK0 ACC0 AGL0 DEF12 EVA10 LCK20</td>
+						<td>9560</td>
+						<td>4780</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="259">
+								<a href="物品图片/259.pngx">259</a>
+							</a>
+						</td>
+						<td>FLARCAPE</td>
+						<td>雕刻有炎之征章的披风。炎·地属性攻击30%的几率无效 </td>
+						<td>ATK0 ACC0 AGL0 DEF8 EVA0 LCK0</td>
+						<td>1500</td>
+						<td>750</td>
+						<td>
+							<a href="../主页.HTML#029_1">029_1</a>
+							<a href="../主页.HTML#039_2">039_2</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#015">015</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="260">
+								<a href="物品图片/260.pngx">260</a>
+							</a>
+						</td>
+						<td>AQUACAPE</td>
+						<td>雕刻有水之征章的披风。水·风属性攻击30%的几率无效 </td>
+						<td>ATK0 ACC0 AGL0 DEF8 EVA0 LCK0</td>
+						<td>1600</td>
+						<td>800</td>
+						<td>
+							<a href="../主页.HTML#015_2">015_2</a>
+							<a href="../主页.HTML#029_1">029_1</a>
+							<a href="../主页.HTML#037_2">037_2</a><br /></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="261">
+								<a href="物品图片/261.pngx">261</a>
+							</a>
+						</td>
+						<td>OVERDURE</td>
+						<td>契约指轮之一。装备上它水属性攻击伤害减半 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="262">
+								<a href="物品图片/262.pngx">262</a>
+							</a>
+						</td>
+						<td>PURPLE</td>
+						<td>契约指轮之一。装备上它暗属性攻击伤害减半 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#050_1">050_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="263">
+								<a href="物品图片/263.pngx">263</a>
+							</a>
+						</td>
+						<td>EMERALD</td>
+						<td>契约指轮之一。光属性以外的伤害减轻。暗属性攻击伤害大减 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#061_2">061_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="264">
+								<a href="物品图片/264.pngx">264</a>
+							</a>
+						</td>
+						<td>OOPAL</td>
+						<td>契约指轮之一。装备上它风属性攻击伤害减半 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="265">
+								<a href="物品图片/265.pngx">265</a>
+							</a>
+						</td>
+						<td>OGARNET</td>
+						<td>契约指轮之一。装备上它火属性攻击伤害减半 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="266">
+								<a href="物品图片/266.pngx">266</a>
+							</a>
+						</td>
+						<td>OAGATE</td>
+						<td>契约指轮之一。装备上它雷属性攻击伤害减半 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="267">
+								<a href="物品图片/267.pngx">267</a>
+							</a>
+						</td>
+						<td>OSAPHIRE</td>
+						<td>契约指轮之一。装备上它可以提升防御力 </td>
+						<td>ATK0 ACC0 AGL0 DEF20 EVA0 LCK0</td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#052_1">052_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="268">
+								<a href="物品图片/268.pngx">268</a>
+							</a>
+						</td>
+						<td>BERYL</td>
+						<td>契约指轮之一。装备上它TP的最大值上升 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#019_2">019_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="269">
+								<a href="物品图片/269.pngx">269</a>
+							</a>
+						</td>
+						<td>ODIAMOND</td>
+						<td>契约指轮之一。装备上它力量上升 </td>
+						<td>ATK5 ACC5 AGL0 DEF5 EVA5 LCK5</td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="270">
+								<a href="物品图片/270.pngx">270</a>
+							</a>
+						</td>
+						<td>OTOPAZ</td>
+						<td>契约指轮之一。装备上它光属性攻击伤害减半 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="271">
+								<a href="物品图片/271.pngx">271</a>
+							</a>
+						</td>
+						<td>OMOON</td>
+						<td>契约指轮之一。装备上它HP的最大值上升 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="272">
+								<a href="物品图片/272.pngx">272</a>
+							</a>
+						</td>
+						<td>RUBY</td>
+						<td>契约指轮之一。装备上它地属性攻击伤害减半 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="273">
+								<a href="物品图片/273.pngx">273</a>
+							</a>
+						</td>
+						<td>SORCERER</td>
+						<td>寄宿着炎之精灵之力的指轮。按以射出火焰 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#016_1">016_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="274">
+								<a href="物品图片/274.pngx">274</a>
+							</a>
+						</td>
+						<td>EMERALD</td>
+						<td>雕刻着妖精像的指轮TP消费为原来的3分之2 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>70000</td>
+						<td>35000</td>
+						<td>
+							<a href="../主页.HTML#036_2">036_2</a>
+							<a href="../主页.HTML#045_1">045_1</a>
+							<a href="../主页.HTML#060_1">060_1</a><br /></td>
+						<td>
+							<a href="../主页.HTML#234">234</a>
+							<a href="../主页.HTML#028">028</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="275">
+								<a href="物品图片/275.pngx">275</a>
+							</a>
+						</td>
+						<td>FAIRY</td>
+						<td>雕刻着妖精像的指轮TP消费为原来的一半 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>76820</td>
+						<td>38410</td>
+						<td>
+							<a href="../主页.HTML#059_2">059_2</a>
+							<a href="../主页.HTML#060_1">060_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="276">
+								<a href="物品图片/276.pngx">276</a>
+							</a>
+						</td>
+						<td>SPIRIT</td>
+						<td>战斗中，装备者的TP每隔一段时间就会回复1点 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>32000</td>
+						<td>16000</td>
+						<td>
+							<a href="../主页.HTML#030_1">030_1</a>
+							<a href="../主页.HTML#040_1">040_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="277">
+								<a href="物品图片/277.pngx">277</a>
+							</a>
+						</td>
+						<td>PROTECT</td>
+						<td>雕刻着战神像的指轮。物理攻击10%的几率无效 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>1200</td>
+						<td>600</td>
+						<td>
+							<a href="../主页.HTML#017_1">017_1</a>
+							<a href="../主页.HTML#022_2">022_2</a>
+							<a href="../主页.HTML#025_1">025_1</a><br />
+							<a href="../主页.HTML#031_1">031_1</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#195">195</a>
+							<a href="../主页.HTML#169">169</a>
+							<a href="../主页.HTML#068">068</a><br /></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="278">
+								<a href="物品图片/278.pngx">278</a>
+							</a>
+						</td>
+						<td>FORCE</td>
+						<td>雕刻着战神像的指轮。物理攻击20%的几率无效 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>2060</td>
+						<td>1030</td>
+						<td>
+							<a href="../主页.HTML#059_2">059_2</a>
+							<a href="../主页.HTML#060_1">060_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="279">
+								<a href="物品图片/279.pngx">279</a>
+							</a>
+						</td>
+						<td>RESIST</td>
+						<td>雕刻着女神像的指轮。属性攻击10%的几率无效 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>1200</td>
+						<td>600</td>
+						<td>
+							<a href="../主页.HTML#016_1">016_1</a>
+							<a href="../主页.HTML#022_1">022_1</a>
+							<a href="../主页.HTML#022_2">022_2</a><br />
+							<a href="../主页.HTML#026_1">026_1</a>
+							<a href="../主页.HTML#046_2">046_2</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#194">194</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="280">
+								<a href="物品图片/280.pngx">280</a>
+							</a>
+						</td>
+						<td>REFLECT</td>
+						<td>雕刻着女神像的指轮。属性攻击20%的几率无效 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>2060</td>
+						<td>1030</td>
+						<td>
+							<a href="../主页.HTML#059_2">059_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="281">
+								<a href="物品图片/281.pngx">281</a>
+							</a>
+						</td>
+						<td>DASHRING</td>
+						<td>装备后可以随意冲刺的指轮 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#051_2">051_2</a>
+							<a href="../主页.HTML#057_2">057_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="282">
+								<a href="物品图片/282.pngx">282</a>
+							</a>
+						</td>
+						<td>TECHNICA</td>
+						<td>使手动操作变成可能的指轮 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#018_1">018_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="283">
+								<a href="物品图片/283.pngx">283</a>
+							</a>
+						</td>
+						<td>REVERSE</td>
+						<td>人体的雕像。装备时如果出现战斗不能的情况会自动复活 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>2000</td>
+						<td>1000</td>
+						<td>
+							<a href="../主页.HTML#011_1">011_1</a>
+							<a href="../主页.HTML#012_2">012_2</a>
+							<a href="../主页.HTML#022_2">022_2</a><br />
+							<a href="../主页.HTML#035_1">035_1</a>
+							<a href="../主页.HTML#040_1">040_1</a>
+							<a href="../主页.HTML#050_1">050_1</a><br />
+							<a href="../主页.HTML#060_1">060_1</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#138">138</a>
+							<a href="../主页.HTML#039">039</a>
+							<a href="../主页.HTML#081">081</a><br /></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="284">
+								<a href="物品图片/284.pngx">284</a>
+							</a>
+						</td>
+						<td>SEPHIRA</td>
+						<td>不知名女神的雕像。装备时可以获得1.5倍的金钱 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>20000</td>
+						<td>10000</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="285">
+								<a href="物品图片/285.pngx">285</a>
+							</a>
+						</td>
+						<td>SSEPHIRA</td>
+						<td>有名女神的雕像。装备时可以获得2倍的金钱 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>10000</td>
+						<td>5000</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="286">
+								<a href="物品图片/286.pngx">286</a>
+							</a>
+						</td>
+						<td>GRAVITY</td>
+						<td>沉重的石头。反重力光束对于装备者无效 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>2</td>
+						<td>1</td>
+						<td>
+							<a href="../主页.HTML#021_1">021_1</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#035">035</a>
+							<a href="../主页.HTML#186">186</a>
+							<a href="../主页.HTML#122">122</a><br />
+							<a href="../主页.HTML#032">032</a>
+							<a href="../主页.HTML#005">005</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="287">
+								<a href="物品图片/287.pngx">287</a>
+							</a>
+						</td>
+						<td>BLACK</td>
+						<td>宝石的一种。装备者的HP最大值30%上升 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>21200</td>
+						<td>10600</td>
+						<td>
+							<a href="../主页.HTML#019_2">019_2</a>
+							<a href="../主页.HTML#021_2">021_2</a>
+							<a href="../主页.HTML#026_1">026_1</a><br />
+							<a href="../主页.HTML#037_2">037_2</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#203">203</a>
+							<a href="../主页.HTML#080">080</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="288">
+								<a href="物品图片/288.pngx">288</a>
+							</a>
+						</td>
+						<td>MISTORB</td>
+						<td>包有烟雾的水晶球战斗时的逃亡速度上升30% </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>5000</td>
+						<td>2500</td>
+						<td>
+							<a href="../主页.HTML#030_1">030_1</a>
+							<a href="../主页.HTML#050_1">050_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="289">
+								<a href="物品图片/289.pngx">289</a>
+							</a>
+						</td>
+						<td>MAGIMIST</td>
+						<td>包有魔法之烟的水晶球战斗时逃亡速度上升50% </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>2500</td>
+						<td>1250</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="290">
+								<a href="物品图片/290.pngx">290</a>
+							</a>
+						</td>
+						<td>CRYSTAL</td>
+						<td>宝石的一种。装备者的TP最大值30%上升 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>21200</td>
+						<td>10600</td>
+						<td>
+							<a href="../主页.HTML#021_1">021_1</a>
+							<a href="../主页.HTML#039_1">039_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="291">
+								<a href="物品图片/291.pngx">291</a>
+							</a>
+						</td>
+						<td>DERRIS</td>
+						<td>用复杂精妙的技术制成的征章用途不明 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>1332</td>
+						<td>666</td>
+						<td>
+							<a href="../主页.HTML#044_2">044_2</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#227">227</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="292">
+								<a href="物品图片/292.pngx">292</a>
+							</a>
+						</td>
+						<td>WARRIOR</td>
+						<td>战士的征章。装备者的攻击力10%上升 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>7200</td>
+						<td>3600</td>
+						<td>
+							<a href="../主页.HTML#016_1">016_1</a>
+							<a href="../主页.HTML#021_2">021_2</a>
+							<a href="../主页.HTML#025_2">025_2</a><br />
+							<a href="../主页.HTML#031_1">031_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="293">
+								<a href="物品图片/293.pngx">293</a>
+							</a>
+						</td>
+						<td>ATTACK</td>
+						<td>资深战士的征章提升装备者的会心一击机率 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>10000</td>
+						<td>5000</td>
+						<td>
+							<a href="../主页.HTML#029_1">029_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="294">
+								<a href="物品图片/294.pngx">294</a>
+							</a>
+						</td>
+						<td>HOLY</td>
+						<td>神圣的征章。能够让装备者每隔一段时间就回复HP最大值的5% </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>100000</td>
+						<td>50000</td>
+						<td>
+							<a href="../主页.HTML#021_2">021_2</a>
+							<a href="../主页.HTML#024_2">024_2</a>
+							<a href="../主页.HTML#055_1">055_1</a><br /></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="295">
+								<a href="物品图片/295.pngx">295</a>
+							</a>
+						</td>
+						<td>MYSTIC</td>
+						<td>魔法师的征章。有着使装备者的吟唱时间减半的效果 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>674100</td>
+						<td>337050</td>
+						<td>
+							<a href="../主页.HTML#053_2">053_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="296">
+								<a href="物品图片/296.pngx">296</a>
+							</a>
+						</td>
+						<td>DARKSEAL</td>
+						<td>邪恶的封印。获得1.5倍经验值特技封印·防御力减半 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>2000</td>
+						<td>1000</td>
+						<td></td>
+						<td>
+							<a href="../主页.HTML#170">170</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="297">
+								<a href="物品图片/297.pngx">297</a>
+							</a>
+						</td>
+						<td>DEMON</td>
+						<td>恶魔的封印。获得2倍经验值特技封印·防御力为0 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0 </td>
+						<td>10300</td>
+						<td>5150</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="298">
+								<a href="物品图片/298.pngx">298</a>
+							</a>
+						</td>
+						<td>EARRING</td>
+						<td>母亲遗留下来的法术师的证明能让无属性魔法无效 </td>
+						<td>ATK0 ACC0 AGL0 DEF20 EVA0 LCK20</td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="299">
+								<a href="物品图片/299.pngx">299</a>
+							</a>
+						</td>
+						<td>COMBO</td>
+						<td>装备后特技需要输入指令才能使用 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>400000</td>
+						<td>200000</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="300">
+								<a href="物品图片/300.pngx">300</a>
+							</a>
+						</td>
+						<td>MATTOCK</td>
+						<td>对于装备者，使地属性的攻击有50%的几率无效的装饰品 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>2000</td>
+						<td>1000</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="301">
+								<a href="物品图片/301.pngx">301</a>
+							</a>
+						</td>
+						<td>POUCH</td>
+						<td>装备后在迷宫里走动，不时会有东西飞出来 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>12000</td>
+						<td>6000</td>
+						<td>
+							<a href="../主页.HTML#046_2">046_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="302">
+								<a href="物品图片/302.pngx">302</a>
+							</a>
+						</td>
+						<td>MYSTIC</td>
+						<td>装备后在迷宫里走动，不时会有好东西飞出来 </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>18000</td>
+						<td>9000</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="303">
+								<a href="物品图片/303.pngx">303</a>
+							</a>
+						</td>
+						<td>COPY</td>
+						<td>分身用的湿布。把这个放在背后竞然会感到强大的斗气！？ </td>
+						<td>ATK0 ACC0 AGL0 DEF0 EVA0 LCK0</td>
+						<td>1000</td>
+						<td>500</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="304">
+								<a href="物品图片/304.pngx">304</a>
+							</a>
+						</td>
+						<td>℃MIRROR</td>
+						<td>画家古里奥融入灵魂完成的杰作有着虚无的风格 </td>
+						<td> </td>
+						<td>10</td>
+						<td>5</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="305">
+								<a href="物品图片/305.pngx">305</a>
+							</a>
+						</td>
+						<td>℃REDKA</td>
+						<td>”TOP收集卡”之中的一枚。"花鸟风月”的卡片 </td>
+						<td> </td>
+						<td>10</td>
+						<td>5</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="306">
+								<a href="物品图片/306.pngx">306</a>
+							</a>
+						</td>
+						<td>℃GREENIKA</td>
+						<td>”TOP收集卡”之中的一枚。"花鸟风月”的卡片 </td>
+						<td> </td>
+						<td>10</td>
+						<td>5</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="307">
+								<a href="物品图片/307.pngx">307</a>
+							</a>
+						</td>
+						<td>℃BLUEKA</td>
+						<td>”TOP收集卡”之中的一枚。"花鸟风月”的卡片 </td>
+						<td> </td>
+						<td>2000</td>
+						<td>1000</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="308">
+								<a href="物品图片/308.pngx">308</a>
+							</a>
+						</td>
+						<td>℃YELLOWKA</td>
+						<td>”TOP收集卡”之中的一枚。"花鸟风月”的卡片 </td>
+						<td> </td>
+						<td>10</td>
+						<td>5</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="309">
+								<a href="物品图片/309.pngx">309</a>
+							</a>
+						</td>
+						<td>℃WHITEKA</td>
+						<td>“TQP收集卡”之中的一枚。“天地人的卡片 </td>
+						<td> </td>
+						<td>200</td>
+						<td>100</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="310">
+								<a href="物品图片/310.pngx">310</a>
+							</a>
+						</td>
+						<td>℃BROWNIKA</td>
+						<td>“TQP收集卡”之中的一枚。“天地人“的卡片 </td>
+						<td> </td>
+						<td>50</td>
+						<td>25</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="311">
+								<a href="物品图片/311.pngx">311</a>
+							</a>
+						</td>
+						<td>℃BLACKKA</td>
+						<td>“TQP收集卡”之中的一枚。“天地人"的卡片 </td>
+						<td> </td>
+						<td>10</td>
+						<td>5</td>
+						<td>
+							<a href="../主页.HTML#058_2">058_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="312">
+								<a href="物品图片/312.pngx">312</a>
+							</a>
+						</td>
+						<td>℃BSTATUE</td>
+						<td>五信条神像之一BRAVE的雕像 </td>
+						<td> </td>
+						<td>3000</td>
+						<td>1500</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="313">
+								<a href="物品图片/313.pngx">313</a>
+							</a>
+						</td>
+						<td>℃JSTATUE</td>
+						<td>五信条神像之一JUSTICE的雕像 </td>
+						<td> </td>
+						<td>3000</td>
+						<td>1500</td>
+						<td>
+							<a href="../主页.HTML#039_1">039_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="314">
+								<a href="物品图片/314.pngx">314</a>
+							</a>
+						</td>
+						<td>℃FSTATUE</td>
+						<td>五信条神像之一FRIENDSHIP的雕像 </td>
+						<td> </td>
+						<td>3000</td>
+						<td>1500</td>
+						<td>
+							<a href="../主页.HTML#053_1">053_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="315">
+								<a href="物品图片/315.pngx">315</a>
+							</a>
+						</td>
+						<td>℃LSTATUE</td>
+						<td>五信条神像之一LOVE的雕像 </td>
+						<td> </td>
+						<td>3000</td>
+						<td>1500</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="316">
+								<a href="物品图片/316.pngx">316</a>
+							</a>
+						</td>
+						<td>℃DSTATUE</td>
+						<td>五信条神像之一DREAM的雕像 </td>
+						<td> </td>
+						<td>3000</td>
+						<td>1500</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="317">
+								<a href="物品图片/317.pngx">317</a>
+							</a>
+						</td>
+						<td>℃SFLAG</td>
+						<td>特殊的棋子。印着血红的S字母！ </td>
+						<td> </td>
+						<td>1530</td>
+						<td>765</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="318">
+								<a href="物品图片/318.pngx">318</a>
+							</a>
+						</td>
+						<td>MERCURY</td>
+						<td>在常温下的贵金属的液体形态练金术所必备的理想的材料 </td>
+						<td> </td>
+						<td>
+							<a href="交易品.html">交易品</a>
+						</td>
+						<td>
+							<a href="交易品.html">交易品</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#060_2">060_2</a>
+							<a href="../主页.HTML#061_2">061_2</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#169">169</a>
+							<a href="../主页.HTML#068">068</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="319">
+								<a href="物品图片/319.pngx">319</a>
+							</a>
+						</td>
+						<td>AGALLOCH</td>
+						<td>采集的非常香的上质香木奇香。如加罗香 </td>
+						<td> </td>
+						<td>
+							<a href="交易品.html">交易品</a>
+						</td>
+						<td>
+							<a href="交易品.html">交易品</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#018_2">018_2</a>
+							<a href="../主页.HTML#019_1">019_1</a>
+							<a href="../主页.HTML#057_2">057_2</a><br /></td>
+						<td>
+							<a href="../主页.HTML#135">135</a>
+							<a href="../主页.HTML#071">071</a>
+							<a href="../主页.HTML#046">046</a><br /></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="320">
+								<a href="物品图片/320.pngx">320</a>
+							</a>
+						</td>
+						<td>UKIYOE</td>
+						<td>用独特变形的绘画法所描绘的漫画 </td>
+						<td> </td>
+						<td>
+							<a href="交易品.html">交易品</a>
+						</td>
+						<td>
+							<a href="交易品.html">交易品</a>
+						</td>
+						<td></td>
+						<td>
+							<a href="../主页.HTML#051">051</a>
+							<a href="../主页.HTML#033">033</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="321">
+								<a href="物品图片/321.pngx">321</a>
+							</a>
+						</td>
+						<td>CORAL</td>
+						<td>虫死后留下的驱体工艺品的材料 </td>
+						<td> </td>
+						<td>
+							<a href="交易品.html">交易品</a>
+						</td>
+						<td>
+							<a href="交易品.html">交易品</a>
+						</td>
+						<td></td>
+						<td>
+							<a href="../主页.HTML#191">191</a>
+							<a href="../主页.HTML#094">094</a>
+							<a href="../主页.HTML#099">099</a><br />
+							<a href="../主页.HTML#017">017</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="322">
+								<a href="物品图片/322.pngx">322</a>
+							</a>
+						</td>
+						<td>MARBLE</td>
+						<td>建筑物和工艺品的材料，是贵重的石块 </td>
+						<td> </td>
+						<td>
+							<a href="交易品.html">交易品</a>
+						</td>
+						<td>
+							<a href="交易品.html">交易品</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#054_1">054_1</a>
+							<a href="../主页.HTML#056_2">056_2</a>
+							<a href="../主页.HTML#059_1">059_1</a><br /></td>
+						<td>
+							<a href="../主页.HTML#192">192</a>
+							<a href="../主页.HTML#002">002</a>
+							<a href="../主页.HTML#056">056</a><br /></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="323">
+								<a href="物品图片/323.pngx">323</a>
+							</a>
+						</td>
+						<td>POT</td>
+						<td>用沙锅烹制出来的形状、味道都很出色的料理 </td>
+						<td> </td>
+						<td>
+							<a href="交易品.html">交易品</a>
+						</td>
+						<td>
+							<a href="交易品.html">交易品</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#061_2">061_2</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#071">071</a>
+							<a href="../主页.HTML#046">046</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="324">
+								<a href="物品图片/324.pngx">324</a>
+							</a>
+						</td>
+						<td>TAPESTRY</td>
+						<td>用高超的编织技术所编织的有美丽绘画风的地毯 </td>
+						<td> </td>
+						<td>
+							<a href="交易品.html">交易品</a>
+						</td>
+						<td>
+							<a href="交易品.html">交易品</a>
+						</td>
+						<td></td>
+						<td>
+							<a href="../主页.HTML#172">172</a>
+							<a href="../主页.HTML#159">159</a>
+							<a href="../主页.HTML#024">024</a><br /></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="325">
+								<a href="物品图片/325.pngx">325</a>
+							</a>
+						</td>
+						<td>EBONY</td>
+						<td>制作高级家具所必备的材料天然的黑色具有高级的感觉 </td>
+						<td> </td>
+						<td>
+							<a href="交易品.html">交易品</a>
+						</td>
+						<td>
+							<a href="交易品.html">交易品</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#049_2">049_2</a>
+							<a href="../主页.HTML#053_2">053_2</a>
+							<a href="../主页.HTML#056_2">056_2</a><br /></td>
+						<td>
+							<a href="../主页.HTML#121">121</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="326">
+								<a href="物品图片/326.pngx">326</a>
+							</a>
+						</td>
+						<td>FUR</td>
+						<td>十分珍贵的野兽兽皮制作毛皮服饰所必须的珍贵材料 </td>
+						<td> </td>
+						<td>
+							<a href="交易品.html">交易品</a>
+						</td>
+						<td>
+							<a href="交易品.html">交易品</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#053_2">053_2</a>
+							<a href="../主页.HTML#054_2">054_2</a>
+							<a href="../主页.HTML#056_2">056_2</a><br /></td>
+						<td>
+							<a href="../主页.HTML#210">210</a>
+							<a href="../主页.HTML#063">063</a>
+							<a href="../主页.HTML#176">176</a><br />
+							<a href="../主页.HTML#152">152</a>
+							<a href="../主页.HTML#183">183</a>
+							<a href="../主页.HTML#168">168</a><br />
+							<a href="../主页.HTML#096">096</a>
+							<a href="../主页.HTML#053">053</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="327">
+								<a href="物品图片/327.pngx">327</a>
+							</a>
+						</td>
+						<td>HERB</td>
+						<td>冬虫夏草。做中药的材料 </td>
+						<td> </td>
+						<td>
+							<a href="交易品.html">交易品</a>
+						</td>
+						<td>
+							<a href="交易品.html">交易品</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#032_1">032_1</a>
+							<a href="../主页.HTML#032_2">032_2</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#171">171</a>
+							<a href="../主页.HTML#081">081</a>
+							<a href="../主页.HTML#030">030</a><br />
+							<a href="../主页.HTML#025">025</a>
+							<a href="../主页.HTML#008">008</a>
+							<a href="../主页.HTML#007">007</a><br /></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="328">
+								<a href="物品图片/328.pngx">328</a>
+							</a>
+						</td>
+						<td>TEACUP</td>
+						<td>又白又漂亮的工芝品有些人肯花高价来买进 </td>
+						<td> </td>
+						<td>
+							<a href="交易品.html">交易品</a>
+						</td>
+						<td>
+							<a href="交易品.html">交易品</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#061_1">061_1</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#137">137</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="329">
+								<a href="物品图片/329.pngx">329</a>
+							</a>
+						</td>
+						<td>SHAMISEN</td>
+						<td>乐器。想要弹出美丽的声音的确需要相 </td>
+						<td> </td>
+						<td>
+							<a href="交易品.html">交易品</a>
+						</td>
+						<td>
+							<a href="交易品.html">交易品</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#061_1">061_1</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#126">126</a>
+							<a href="../主页.HTML#113">113</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="330">
+								<a href="物品图片/330.pngx">330</a>
+							</a>
+						</td>
+						<td>IVORY</td>
+						<td>象牙。是用来制作工艺品的好材料 </td>
+						<td> </td>
+						<td>
+							<a href="交易品.html">交易品</a>
+						</td>
+						<td>
+							<a href="交易品.html">交易品</a>
+						</td>
+						<td>
+							<a href="../主页.HTML#054_1">054_1</a>
+							<a href="../主页.HTML#054_2">054_2</a>
+							<a href="../主页.HTML#056_2">056_2</a><br /></td>
+						<td>
+							<a href="../主页.HTML#143">143</a>
+							<a href="../主页.HTML#058">058</a>
+						</td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="331">
+								<a href="物品图片/331.pngx">331</a>
+							</a>
+						</td>
+						<td>SWORD</td>
+						<td>未知道具。种类为剑 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="332">
+								<a href="物品图片/332.pngx">332</a>
+							</a>
+						</td>
+						<td>SWORD</td>
+						<td>未知道具。种类为剑 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="333">
+								<a href="物品图片/333.pngx">333</a>
+							</a>
+						</td>
+						<td>SWORD</td>
+						<td>未知道具。种类为剑 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="334">
+								<a href="物品图片/334.pngx">334</a>
+							</a>
+						</td>
+						<td>SWORD</td>
+						<td>未知道具。种类为剑 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="335">
+								<a href="物品图片/335.pngx">335</a>
+							</a>
+						</td>
+						<td>SWORD</td>
+						<td>未知道具。种类为剑 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="336">
+								<a href="物品图片/336.pngx">336</a>
+							</a>
+						</td>
+						<td>SWORD</td>
+						<td>未知道具。种类为剑 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="337">
+								<a href="物品图片/337.pngx">337</a>
+							</a>
+						</td>
+						<td>SWORD</td>
+						<td>未知道具。种类为剑 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="338">
+								<a href="物品图片/338.pngx">338</a>
+							</a>
+						</td>
+						<td>SWORD</td>
+						<td>未知道具。种类为剑 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="339">
+								<a href="物品图片/339.pngx">339</a>
+							</a>
+						</td>
+						<td>SWORD</td>
+						<td>未知道具。种类为剑 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="340">
+								<a href="物品图片/340.pngx">340</a>
+							</a>
+						</td>
+						<td>SWORD</td>
+						<td>未知道具。种类为剑 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="341">
+								<a href="物品图片/341.pngx">341</a>
+							</a>
+						</td>
+						<td>SWORD</td>
+						<td>未知道具。种类为剑 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="342">
+								<a href="物品图片/342.pngx">342</a>
+							</a>
+						</td>
+						<td>SWORD</td>
+						<td>未知道具。种类为剑 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="343">
+								<a href="物品图片/343.pngx">343</a>
+							</a>
+						</td>
+						<td>SWORD</td>
+						<td>未知道具。种类为剑 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="344">
+								<a href="物品图片/344.pngx">344</a>
+							</a>
+						</td>
+						<td>SWORD</td>
+						<td>未知道具。种类为剑 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="345">
+								<a href="物品图片/345.pngx">345</a>
+							</a>
+						</td>
+						<td>SPEAR</td>
+						<td>未知道具。种类为枪 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="346">
+								<a href="物品图片/346.pngx">346</a>
+							</a>
+						</td>
+						<td>AXE</td>
+						<td>未知道具。种类为斧 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="347">
+								<a href="物品图片/347.pngx">347</a>
+							</a>
+						</td>
+						<td>AXE</td>
+						<td>未知道具。种类为斧 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="348">
+								<a href="物品图片/348.pngx">348</a>
+							</a>
+						</td>
+						<td>AXESPR</td>
+						<td>未知道具。种类为斧枪 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="349">
+								<a href="物品图片/349.pngx">349</a>
+							</a>
+						</td>
+						<td>BOW</td>
+						<td>未知道具。种类为弓 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="350">
+								<a href="物品图片/350.pngx">350</a>
+							</a>
+						</td>
+						<td>BOW</td>
+						<td>未知道具。种类为弓 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="351">
+								<a href="物品图片/351.pngx">351</a>
+							</a>
+						</td>
+						<td>BOW</td>
+						<td>未知道具。种类为弓 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="352">
+								<a href="物品图片/352.pngx">352</a>
+							</a>
+						</td>
+						<td>BOW</td>
+						<td>未知道具。种类为弓 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="353">
+								<a href="物品图片/353.pngx">353</a>
+							</a>
+						</td>
+						<td>BOW</td>
+						<td>未知道具。种类为弓 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="354">
+								<a href="物品图片/354.pngx">354</a>
+							</a>
+						</td>
+						<td>BOW</td>
+						<td>未知道具。种类为弓 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="355">
+								<a href="物品图片/355.pngx">355</a>
+							</a>
+						</td>
+						<td>BOW</td>
+						<td>未知道具。种类为弓 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="356">
+								<a href="物品图片/356.pngx">356</a>
+							</a>
+						</td>
+						<td>ROD</td>
+						<td>未知道具。种类为杖 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="357">
+								<a href="物品图片/357.pngx">357</a>
+							</a>
+						</td>
+						<td>ROD</td>
+						<td>未知道具。种类为杖 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="358">
+								<a href="物品图片/358.pngx">358</a>
+							</a>
+						</td>
+						<td>ROD</td>
+						<td>未知道具。种类为杖 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="359">
+								<a href="物品图片/359.pngx">359</a>
+							</a>
+						</td>
+						<td>BOOK</td>
+						<td>未知道具。种类为书 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="360">
+								<a href="物品图片/360.pngx">360</a>
+							</a>
+						</td>
+						<td>BOOK</td>
+						<td>未知道具。种类为书 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="361">
+								<a href="物品图片/361.pngx">361</a>
+							</a>
+						</td>
+						<td>BOOK</td>
+						<td>未知道具。种类为书 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="362">
+								<a href="物品图片/362.pngx">362</a>
+							</a>
+						</td>
+						<td>BOOK</td>
+						<td>未知道具。种类为书 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="363">
+								<a href="物品图片/363.pngx">363</a>
+							</a>
+						</td>
+						<td>BOOK</td>
+						<td>未知道具。种类为书 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="364">
+								<a href="物品图片/364.pngx">364</a>
+							</a>
+						</td>
+						<td>BOOK</td>
+						<td>未知道具。种类为书 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="365">
+								<a href="物品图片/365.pngx">365</a>
+							</a>
+						</td>
+						<td>CLOTH</td>
+						<td>未知道具。服装类 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="366">
+								<a href="物品图片/366.pngx">366</a>
+							</a>
+						</td>
+						<td>CLOTH</td>
+						<td>未知道具。服装类 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="367">
+								<a href="物品图片/367.pngx">367</a>
+							</a>
+						</td>
+						<td>ARMOR</td>
+						<td>未知道具。铠甲类 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="368">
+								<a href="物品图片/368.pngx">368</a>
+							</a>
+						</td>
+						<td>ARMOR</td>
+						<td>未知道具。铠甲类 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="369">
+								<a href="物品图片/369.pngx">369</a>
+							</a>
+						</td>
+						<td>ARMOR</td>
+						<td>未知道具。铠甲类 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="370">
+								<a href="物品图片/370.pngx">370</a>
+							</a>
+						</td>
+						<td>ARMOR</td>
+						<td>未知道具。铠甲类 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="371">
+								<a href="物品图片/371.pngx">371</a>
+							</a>
+						</td>
+						<td>HELMET</td>
+						<td>未知道具。头盔类 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="372">
+								<a href="物品图片/372.pngx">372</a>
+							</a>
+						</td>
+						<td>HELMET</td>
+						<td>未知道具。头盔类 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="373">
+								<a href="物品图片/373.pngx">373</a>
+							</a>
+						</td>
+						<td>HELMET</td>
+						<td>未知道具。头盔类 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="374">
+								<a href="物品图片/374.pngx">374</a>
+							</a>
+						</td>
+						<td>BERET</td>
+						<td>未知道具。帽子类 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="375">
+								<a href="物品图片/375.pngx">375</a>
+							</a>
+						</td>
+						<td>SPEAR</td>
+						<td>未知道具。种类为枪 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="376">
+								<a href="物品图片/376.pngx">376</a>
+							</a>
+						</td>
+						<td>AXE</td>
+						<td>未知道具。种类为斧 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="377">
+								<a href="物品图片/377.pngx">377</a>
+							</a>
+						</td>
+						<td>BOW</td>
+						<td>未知道具。种类为弓 </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="378">
+								<a href="物品图片/378.pngx">378</a>
+							</a>
+						</td>
+						<td>PENDANT</td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="379">
+								<a href="物品图片/379.pngx">379</a>
+							</a>
+						</td>
+						<td>STUFFED</td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="380">
+								<a href="物品图片/380.pngx">380</a>
+							</a>
+						</td>
+						<td>EARRING</td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="381">
+								<a href="物品图片/381.pngx">381</a>
+							</a>
+						</td>
+						<td>RUBY</td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#007_1">007_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="382">
+								<a href="物品图片/382.pngx">382</a>
+							</a>
+						</td>
+						<td>BOOK</td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="383">
+								<a href="物品图片/383.pngx">383</a>
+							</a>
+						</td>
+						<td>BROKEBOW</td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="384">
+								<a href="物品图片/384.pngx">384</a>
+							</a>
+						</td>
+						<td>ORB</td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="385">
+								<a href="物品图片/385.pngx">385</a>
+							</a>
+						</td>
+						<td>KEY</td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#012_1">012_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="386">
+								<a href="物品图片/386.pngx">386</a>
+							</a>
+						</td>
+						<td>PASS</td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="387">
+								<a href="物品图片/387.pngx">387</a>
+							</a>
+						</td>
+						<td>CREST</td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="388">
+								<a href="物品图片/388.pngx">388</a>
+							</a>
+						</td>
+						<td>LETTER</td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="389">
+								<a href="物品图片/389.pngx">389</a>
+							</a>
+						</td>
+						<td>RING</td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="390">
+								<a href="物品图片/390.pngx">390</a>
+							</a>
+						</td>
+						<td>LAVAKEY</td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#016_1">016_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="391">
+								<a href="物品图片/391.pngx">391</a>
+							</a>
+						</td>
+						<td>KARDS</td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#033_1">033_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="392">
+								<a href="物品图片/392.pngx">392</a>
+							</a>
+						</td>
+						<td>MIRROR</td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#031_2">031_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="393">
+								<a href="物品图片/393.pngx">393</a>
+							</a>
+						</td>
+						<td>GOLDKEY</td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#030_1">030_1</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="394">
+								<a href="物品图片/394.pngx">394</a>
+							</a>
+						</td>
+						<td>WINGPACK</td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="395">
+								<a href="物品图片/395.pngx">395</a>
+							</a>
+						</td>
+						<td>TEXT</td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="396">
+								<a href="物品图片/396.pngx">396</a>
+							</a>
+						</td>
+						<td>DRESS</td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="397">
+								<a href="物品图片/397.pngx">397</a>
+							</a>
+						</td>
+						<td>COMONKEY</td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#033_2">033_2</a>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="sequence">
+							<a name="398">
+								<a href="物品图片/398.pngx">398</a>
+							</a>
+						</td>
+						<td>WOOD</td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td> </td>
+						<td>
+							<a href="../主页.HTML#056_2">056_2</a>
+						</td>
+						<td></td>
+					</tr>
+
+				</tbody>
+
+			</table>
+		</p>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				var tableObject = $('#tableSort'); //获取id为tableSort的table对象
+				var tbHead = tableObject.children('thead'); //获取table对象下的thead
+				var tbHeadTh = tbHead.find('tr th'); //获取thead下的tr下的th
+				var tbBody = tableObject.children('tbody'); //获取table对象下的tbody
+				var tbBodyTr = tbBody.find('tr'); //获取tbody下的tr
+				var sortIndex = -1; //初始化索引
+				tbHeadTh.each(function() { //遍历thead的tr下的th
+					var thisIndex = tbHeadTh.index($(this)); //获取th所在的列号
+					//鼠标移除和聚焦的效果，不重要
+					$(this).mouseover(function() { //鼠标移开事件
+						tbBodyTr.each(function() { //编列tbody下的tr
+							var tds = $(this).find("td"); //获取列号为参数index的td对象集合
+							$(tds[thisIndex]).addClass("hover");
+						});
+					}).mouseout(function() { //鼠标聚焦时间
+						tbBodyTr.each(function() {
+							var tds = $(this).find("td");
+							$(tds[thisIndex]).removeClass("hover");
+						});
+					});
+
+					$(this).click(function() { //鼠标点击事件
+						var dataType = $(this).attr("type"); //获取当前点击列的 type
+						checkColumnValue(thisIndex, dataType); //对当前点击的列进行排序 （当前索引，排序类型）
+					});
+				});
+
+				//显示效果，不重要
+				$("tbody tr").removeClass(); //先移除tbody下tr的所有css类
+				$("tbody tr").mouseover(function() {
+					$(this).addClass("hover");
+				}).mouseout(function() {
+					$(this).removeClass("hover");
+				});
+
+				//对表格排序
+				function checkColumnValue(index, type) {
+					var trsValue = new Array(); //创建一个新的列表
+					tbBodyTr.each(function() { //遍历所有的tr标签
+						var tds = $(this).find('td'); //查找所有的 td 标签
+						//将当前的点击列 push 到一个新的列表中
+						//包括 当前行的 类型、当前索引的 值，和当前行的值
+						trsValue.push(type + ".separator" + $(tds[index]).html() + ".separator" + $(this).html());
+						$(this).html(""); //清空当前列
+					});
+					var len = trsValue.length; //获取所有要拍戏的列的长度
+					if(index == sortIndex) { //sortIndex =-1
+						trsValue.reverse(); //???
+					} else {
+						for(var i = 0; i < len; i++) { //遍历所有的行
+							type = trsValue[i].split(".separator")[0]; // 获取要排序的类型
+							for(var j = i + 1; j < len; j++) {
+								value1 = trsValue[i].split(".separator")[1]; //当前值
+								value2 = trsValue[j].split(".separator")[1]; //当前值的下一个
+								if(type == "number") {
+									//js 三元运算  如果 values1 等于 '' （空） 那么，该值就为0，否则 改值为当前值
+									value1 = value1 == "" ? 0 : value1;
+									value2 = value2 == "" ? 0 : value2;
+									//parseFloat() 函数可解析一个字符串，并返回一个浮点数。
+									//该函数指定字符串中的首个字符是否是数字。如果是，则对字符串进行解析，直到到达数字的末端为止，然后以数字返回该数字，而不是作为字符串。
+									//如果字符串的第一个字符不能被转换为数字，那么 parseFloat() 会返回 NaN。
+									if(parseFloat(value1) > parseFloat(value2)) { //如果当前值 大于 下一个值
+										var temp = trsValue[j]; //那么就记住 大 的那个值
+										trsValue[j] = trsValue[i];
+										trsValue[i] = temp;
+									}
+								} else if(type == "ip") {
+									if(ip2int(value1) > ip2int(value2)) {
+										var temp = trsValue[j];
+										trsValue[j] = trsValue[i];
+										trsValue[i] = temp;
+									}
+								} else {
+									//JavaScript localeCompare() 方法 用本地特定的顺序来比较两个字符串。
+									//说明比较结果的数字。
+									// 如果 stringObject 小于 target，则 localeCompare() 返回小于 0 的数。
+									// 如果 stringObject 大于 target，则该方法返回大于 0 的数。
+									// 如果两个字符串相等，或根据本地排序规则没有区别，该方法返回 0。
+									if(value1.localeCompare(value2) > 0) { //该方法不兼容谷歌浏览器
+										var temp = trsValue[j];
+										trsValue[j] = trsValue[i];
+										trsValue[i] = temp;
+									}
+								}
+							}
+						}
+					}
+					for(var i = 0; i < len; i++) {
+						//将排序完的 值 插入到 表格中
+						//:eq(index) 匹配一个给定索引值的元素
+						$("tbody tr:eq(" + i + ")").html(trsValue[i].split(".separator")[2]);
+						//console.log($("tbody tr:eq(" + i + ")").html())
+					}
+					sortIndex = index;
+				}
+			})
+		</script>
+	</body>
+
+</html>
